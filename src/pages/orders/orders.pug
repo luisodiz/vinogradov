@@ -1,0 +1,77 @@
+extends ../../layouts/layout-page/layout-page
+include ../../components/title/title
+include ../../components/profile-block/profile-block
+include ../../components/show-more-line/show-more-line
+
+include ../../components/modals/registration-modal/registration-modal
+include ../../components/modals/auth-modal/auth-modal
+
+block title
+  -var title = 'Заказы'
+  title= title
+
+block before-content
+  +title-after-button('Заказы', 'В профиль')
+
+block content
+  .orders
+    -
+      const orders = [
+        {
+          title: 'Заказ № 125 от 12.07.22',
+          currentStatus: 'Новый',
+          isDashed: true,
+          list: [
+            {
+              name: 'Товаров:',
+              value: '1'
+            },
+            {
+              name: 'Сумма:',
+              value: '2 500 ₽'
+            },
+            {
+              name: 'Статус оплаты:',
+              value: 'Не оплачен'
+            },
+            {
+              name: 'Доставка',
+              value: 'Самовывоз из ПВД'
+            }
+          ]
+        },
+        {
+          title: 'Заказ № 125 от 12.07.22',
+          currentStatus: 'Передан в доставку',
+          isDashed: true,
+          list: [
+            {
+              name: 'Товаров:',
+              value: '2'
+            },
+            {
+              name: 'Сумма:',
+              value: '2 500 ₽'
+            },
+            {
+              name: 'Статус оплаты:',
+              value: 'Оплачен'
+            },
+            {
+              name: 'Доставка',
+              value: 'Курьером'
+            }
+          ]
+        },
+      ]
+      const filledOrders = [...orders, ...new Array(8).fill(orders[0])]
+
+    .orders__list.row
+      each order in filledOrders
+        .col-12.col-md-6.orders__col
+          +profile-block(order)
+    +show-more-line().orders__show-more-line
+
+block modals
+  +auth-modal()
+  +registration-modal()

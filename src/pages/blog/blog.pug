@@ -1,0 +1,97 @@
+extends ../../layouts/layout-page/layout-page
+include ../../components/breadcrumbs/breadcrumbs
+include ../../components/title/title
+include ../../components/blog-article/blog-article
+include ../../components/show-more-line/show-more-line
+include ../../components/tabs/tabs
+
+include ../../components/modals/registration-modal/registration-modal
+include ../../components/modals/auth-modal/auth-modal
+
+block title
+  -var title = 'Блог'
+  title= title
+
+block before-content
+  -
+    const list = ['Главная', 'Блог']
+  + breadcrumbs(list)
+  +title('h1', 'Блог')
+
+block content
+  -
+    const article = {
+      title: 'Новый вектор развития православных украшений',
+      img: 'img/blog/1.jpg',
+      desc: 'В своей работе мы стремимся чувствовать дух времени и чтить традиции устоявшегося православного мира, где сочетание этики и эстетики',
+      date: '24.10.2022',
+      tags: ['Обзор товаров']
+    }
+
+    const articleList = new Array(10).fill(article)
+
+    const tabs = [
+      {
+        label: 'Все статьи',
+        name: 'all-articles',
+        active: true
+      },
+      {
+        label: 'Обзор товаров',
+        name: 'review'
+      },
+      {
+        label: 'Новости',
+        name: 'news'
+      },
+      {
+        label: 'Советы покупателям',
+        name: 'for-clients'
+      },
+      {
+        label: 'Акции',
+        name: 'stocks'
+      }
+    ]
+
+  .blog
+    +tabs(tabs)
+      +slot('all-articles')
+        .blog__articles
+          .row.blog__row.blog__articles-row
+            each item in articleList
+              .col-12.col-md-6.blog__articles-col
+                +blog-article(item).blog__blog-article
+          +show-more-line().blog__articles-show-more-line
+      +slot('review')
+        .blog__articles
+          .row.blog__row.blog__articles-row
+            each item in articleList
+              .col-12.col-md-6.blog__articles-col
+                +blog-article(item).blog__blog-article
+          +show-more-line().blog__articles-show-more-line
+      +slot('news')
+        .blog__articles
+          .row.blog__row.blog__articles-row
+            each item in articleList
+              .col-12.col-md-6.blog__articles-col
+                +blog-article(item).blog__blog-article
+          +show-more-line().blog__articles-show-more-line
+      +slot('for-clients')
+        .blog__articles
+          .row.blog__row.blog__articles-row
+            each item in articleList
+              .col-12.col-md-6.blog__articles-col
+                +blog-article(item).blog__blog-article
+          +show-more-line().blog__articles-show-more-line
+      +slot('stocks')
+        .blog__articles
+          .row.blog__row.blog__articles-row
+            each item in articleList
+              .col-12.col-md-6.blog__articles-col
+                +blog-article(item).blog__blog-article
+          +show-more-line().blog__articles-show-more-line
+
+block modals
+  +auth-modal()
+  +registration-modal()

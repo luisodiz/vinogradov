@@ -1,0 +1,29 @@
+mixin input-field(label, name, type, placeholder, mask, password, error, disabled, value)
+  if (disabled)
+    .input-field&attributes(attributes)
+      .input-field__inner
+        input(type= 'text', name= name, placeholder= placeholder, data-mask= mask, value= value disabled class=`${password ? 'input-field__input_password' : ''}`).input-field__input
+        label(for=name).input-field__label= label
+        if (password)
+          button(type="button").input-field__pass-toggle.input-field_pass-hidden
+            .input-field__pass-toggle-icon.input-field__pass-toggle-icon_show-pass
+              +icon('eye-opened')
+            .input-field__pass-toggle-icon.input-field__pass-toggle-icon_hide-pass
+              +icon('eye-closed')
+      if error
+        .input-field__error= error
+  else
+    .input-field&attributes(
+      attributes)(class=`${error ? 'is-error' : ''}`)
+      .input-field__inner
+        if (mask)
+          input(type= type ? type : 'text', name= name, placeholder= placeholder, data-mask= mask, value= value class=`${password ? 'input-field__input_password' : ''}`).input-field__input
+        else
+          input(type= type ? type : 'text', name= name, placeholder= placeholder, value= value class=`${password ? 'input-field__input_password' : ''}`).input-field__input
+        label(for=name).input-field__label= label
+        if (password)
+          button(type="button").input-field__pass-toggle.input-field__pass-toggle_pass-hidden
+            +icon('eye-opened').input-field__pass-toggle-icon.input-field__pass-toggle-icon_show-pass
+            +icon('eye-closed').input-field__pass-toggle-icon.input-field__pass-toggle-icon_hide-pass
+      if error
+        .input-field__error= error

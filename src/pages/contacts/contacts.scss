@@ -1,0 +1,63 @@
+.contacts {
+  .contacts-row {
+    @include desktop {
+      margin-bottom: -10px;
+    }
+  }
+
+  &-col {
+    margin-bottom: 10px;
+  }
+
+  &-block {
+    @include font-medium();
+    padding: 20px 15px;
+    background: $color-black-haze;
+    height: 100%;
+
+    @include tablet {
+      padding: 20px;
+    }
+
+    &__title {
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 10px;
+      @include font-medium();
+      color: $color-tuatara;
+
+      @include tablet {
+        font-size: 20px;
+        line-height: 140%;
+        margin-bottom: 20px;
+      }
+    }
+
+    &__list-item {
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: $color-tuatara;
+
+      &:hover {
+        color: $color-dove-gray;
+      }
+    }
+
+    span {
+      color: $color-tuatara;
+    }
+
+    &__socials {
+      margin-top: 24px;
+
+      .socials {
+
+      }
+    }
+  }
+}

@@ -1,0 +1,154 @@
+include ../form/radio-field/radio-field
+include ../form/checkbox-field/checkbox-field
+include ../select-price/select-price
+
+mixin filter
+  .filter.filter_desktop&attributes(attributes)
+    .filter__list
+      .filter__item.filter__item_mobile-toggler
+        .filter__button
+          .filter__toggle-mobile
+            +icon('filter').filter__toggle-mobile-icon
+            span.filter__count-filters.active 2
+          span.filter__toggle-mobile-text Фильтр
+      .filter__item(data-filter="view")
+        .filter__button
+          span.filter__dot
+          span.filter__item-name Вид изделия
+          +icon('play-down').filter__icon-chevron
+        .filter__dropdown
+          .filter__dropdown-block
+            +radio-field('koltca1', 'view', 'Кольца', 'Кольца')
+            +radio-field('sergi1', 'view', 'Серьги', 'Серьги')
+            +radio-field('brasleti1', 'view', 'Браслеты', 'Браслеты')
+            +radio-field('kolie1', 'view', 'Колье', 'Колье')
+      .filter__item(data-filter="for")
+        .filter__button
+          span.filter__item-name Для кого
+          +icon('play-down').filter__icon-chevron
+        .filter__dropdown
+          .filter__dropdown-block
+            +radio-field('male1', 'for', 'Мужчина', 'Мужчин')
+            +radio-field('female1', 'for', 'Женщина', 'Женщин')
+            +radio-field('child1', 'for', 'Ребенок', 'Детей')
+      .filter__item(data-filter="material")
+        .filter__button
+          span.filter__button-active-circle
+          span.filter__item-name Материал
+          +icon('play-down').filter__icon-chevron
+        .filter__dropdown
+          .filter__dropdown-block
+            +radio-field('gold1', 'material', 'Золото', 'Золото', true)
+            +radio-field('silver1', 'material', 'Серебро', 'Серебро')
+      .filter__item(data-filter="size")
+        .filter__button
+          span.filter__item-name Размер
+          +icon('play-down').filter__icon-chevron
+        .filter__dropdown
+          .filter__dropdown-block
+            +checkbox-field('15.51', 'size[]', '15.5', '15.5')
+            +checkbox-field('16.01', 'size[]', '16.0', '16.0')
+            +checkbox-field('17.51', 'size[]', '17.5', '17.5')
+            +checkbox-field('18.01', 'size[]', '18.0', '18.0')
+            +checkbox-field('18.51', 'size[]', '18.5', '18.5')
+            +checkbox-field('19.01', 'size[]', '19.0', '19.0')
+            +checkbox-field('19.51', 'size[]', '19.5', '19.5')
+      .filter__item(data-filter="vstavki")
+        .filter__button
+          span.filter__button-active-circle
+          span.filter__item-name Вставки
+          +icon('play-down').filter__icon-chevron
+        .filter__dropdown
+          .filter__dropdown-block
+            +checkbox-field('ametist1', 'vstavki[]', 'Аметист', 'Аметист', true)
+            +checkbox-field('brilliant1', 'vstavki[]', 'Бриллиант', 'Бриллиант', true)
+            +checkbox-field('rubin1', 'vstavki[]', 'Рубин', 'Рубин')
+            +checkbox-field('fianit1', 'vstavki[]', 'Фианит', 'Фианит')
+            +checkbox-field('hrizolit1', 'vstavki[]', 'Хризолит', 'Хризолит')
+      .filter__item(data-filter="collection")
+        .filter__button
+          span.filter__item-name Коллекция
+          +icon('play-down').filter__icon-chevron
+        .filter__dropdown
+          .filter__dropdown-block
+            +checkbox-field('spasi-sohrani1', 'collections[]', 'Спаси и Сохрани', 'Спаси и Сохрани')
+            +checkbox-field('vozrozhdenie1', 'collections[]', 'Возрождение', 'Возрождение')
+            +checkbox-field('golgovskiy-krest1', 'collections[]', 'Голгофский крест', 'Голгофский крест')
+            +checkbox-field('vossoedinenie1', 'collections[]', 'Воссоединение', 'Воссоединение')
+            +checkbox-field('idilia1', 'collections[]', 'Идилия', 'Идилия')
+      .filter__item(data-filter="price")
+        .filter__button
+          span.filter__item-name Цена
+          +icon('play-down').filter__icon-chevron
+        .filter__dropdown
+          +select-price([
+            { id: 'price1' },
+            { id: 'price2' }
+          ])
+      .filter__item(data-filter="obraz")
+        .filter__button
+          span.filter__item-name Образ
+          +icon('play-down').filter__icon-chevron
+        .filter__dropdown
+          p Образ
+      .filter__item(data-filter="sort")
+        .filter__button
+          span.filter__item-name Сортировка
+          +icon('play-down').filter__icon-chevron
+        .filter__dropdown
+          p Сортировка
+      .filter__item.filter__item_more
+        .filter__button
+          span.filter__item-name Еще
+          +icon('play-down').filter__icon-chevron
+        .filter__dropdown.filter__dropdown_more
+          .filter__dropdown-list
+            .filter__dropdown-item(data-filter="vstavka")
+              .filter__dropdown-button
+                span.filter__button-active-circle
+                +icon('play-left').filter__dropdown-item-chevron-left
+                span.filter__dropdown-item-name Вставки
+              .filter__dropdown-subdrop.subdrop
+                .filter__dropdown-block
+                  +checkbox-field('ametist2', 'vstavki[]', 'Аметист', 'Аметист', true)
+                  +checkbox-field('brilliant2', 'vstavki[]', 'Бриллиант', 'Бриллиант', true)
+                  +checkbox-field('rubin2', 'vstavki[]', 'Рубин', 'Рубин')
+                  +checkbox-field('fianit2', 'vstavki[]', 'Фианит', 'Фианит')
+                  +checkbox-field('hrizolit2', 'vstavki[]', 'Хризолит', 'Хризолит')
+            .filter__dropdown-item(data-filter="collection")
+              .filter__dropdown-button
+                +icon('play-left').filter__dropdown-item-chevron-left
+                span.filter__dropdown-item-name Коллекция
+              .filter__dropdown-subdrop.subdrop
+                .filter__dropdown-block
+                  +checkbox-field('spasi-sohrani2', 'collections[]', 'Спаси и Сохрани', 'Спаси и Сохрани')
+                  +checkbox-field('vozrozhdenie2', 'collections[]', 'Возрождение', 'Возрождение')
+                  +checkbox-field('golgovskiy-krest2', 'collections[]', 'Голгофский крест', 'Голгофский крест')
+                  +checkbox-field('vossoedinenie2', 'collections[]', 'Воссоединение', 'Воссоединение')
+                  +checkbox-field('idilia2', 'collections[]', 'Идилия', 'Идилия')
+            .filter__dropdown-item(data-filter="price")
+              .filter__dropdown-button
+                +icon('play-left').filter__dropdown-item-chevron-left
+                span.filter__dropdown-item-name Цена
+              .filter__dropdown-subdrop.subdrop
+                +select-price([
+                  { id: 'price1' },
+                  { id: 'price2' }
+                ])
+            .filter__dropdown-item(data-filter="obraz")
+              .filter__dropdown-button
+                +icon('play-left').filter__dropdown-item-chevron-left
+                span.filter__dropdown-item-name Образ
+              .filter__dropdown-subdrop.subdrop
+                p Образ
+            .filter__dropdown-item(data-filter="sort")
+              .filter__dropdown-button
+                +icon('play-left').filter__dropdown-item-chevron-left
+                span.filter__dropdown-item-name Сортировка
+              .filter__dropdown-subdrop.subdrop
+                p Сортировка
+
+      .filter__item.filter__item_reset.filter__item_disabled
+        .filter__button
+          +icon('refresh').filter__icon-refresh
+          span.filter__item-name Сбросить

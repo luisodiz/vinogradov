@@ -1,0 +1,19 @@
+.blog {
+  &__articles {
+    &-row {
+      margin-bottom: -20px;
+
+      @include desktop {
+        margin-bottom: -30px;
+      }
+    }
+
+    &-col {
+      margin-bottom: 20px;
+
+      @include desktop {
+        margin-bottom: 30px;
+      }
+    }
+  }
+}

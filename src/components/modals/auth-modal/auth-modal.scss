@@ -1,0 +1,77 @@
+.auth-modal {
+  &__form {}
+
+  &__input-field {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+
+      @include tablet {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__line {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__submit {
+    height: 46px;
+    margin-bottom: 15px;
+
+    @include tablet {
+      height: 52px;
+      margin-right: 10px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__registration {
+    font-size: 14px;
+    line-height: 24px;
+    @include font-medium;
+    align-self: center;
+    color: $color-tuatara;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    @include tablet {
+      align-self: unset;
+    }
+  }
+
+  &__forgot {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid $color-black-haze;
+    @include font-medium;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      margin-right: 10px;
+      color: $color-dove-gray;
+    }
+
+    &-link {
+      color: $color-tuatara;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

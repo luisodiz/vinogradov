@@ -1,0 +1,32 @@
+extends ../../layouts/layout-default/layout-default
+include ../../components/main-slider/main-slider
+include ../../components/button/button
+include ../../components/link/link
+include ../../components/categories/categories
+include ../../components/advantages/advantages
+include ../../components/master/master
+include ../../components/collections/collections
+include ../../components/products-slider-section/products-slider-section
+include ../../components/subs-block/subs-block
+
+include ../../components/modals/auth-modal/auth-modal
+include ../../components/modals/registration-modal/registration-modal
+
+block title
+  - var title = 'Главная | Виноградов'
+  title= title
+
+block content
+  +main-slider()
+  +categories()
+  +collections()
+  +master()
+  +advantages()
+  +products-slider-section().home__products-slider-section
+  +subs-block().home__subs-block
+
+
+block modals
+  +auth-modal()
+  +registration-modal()
+

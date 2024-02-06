@@ -1,0 +1,17 @@
+.orders {
+  &__col {
+    margin-bottom: 5px;
+
+    @include tablet {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__row {
+    margin-bottom: -5px;
+
+    @include tablet {
+      margin-bottom: -20px;
+    }
+  }
+}

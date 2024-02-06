@@ -1,0 +1,94 @@
+extends ../../layouts/layout-page/layout-page
+include ../../components/breadcrumbs/breadcrumbs
+include ../../components/title/title
+include ../../components/show-more-line/show-more-line
+include ../../components/profile-block/profile-block
+include ../../components/rounded-btn-with-text/rounded-btn-with-text
+
+include ../../components/modals/registration-modal/registration-modal
+include ../../components/modals/auth-modal/auth-modal
+
+block title
+  -var title = 'Профиль'
+  title= title
+
+block before-content
+  -
+    const list = ['Главная', 'Профиль']
+  + breadcrumbs(list)
+  +title('h1', 'Профиль')
+
+block content
+  .profile
+    -
+      const profileBlocks = [
+        {
+          title: 'Личные данные',
+          list: [
+            {
+              name: 'ФИО:',
+              value: 'Иванов Иван Иванович'
+            },
+            {
+              name: 'Телефон:',
+              value: '+7 961 *** 32 56'
+            },
+            {
+              name: 'Email:',
+              value: 'ivanovskiymen@yandex.ru'
+            },
+            {
+              name: 'Адрес доставки:',
+              isNameBlockItem: true,
+              value: 'Ярославль, ул. Большие выселки, д.5 кв. 78'
+            }
+          ]
+        },
+        {
+          title: 'Заказы',
+          list: [
+            {
+              name: 'Активных',
+              value: '2'
+            },
+            {
+              name: 'Завершенных',
+              value: '125'
+            },
+            {
+              name: 'Отмененных',
+              value: '4'
+            }
+          ]
+        },
+        {
+          title: 'Избранное',
+          isFavorite: true,
+        },
+        {
+          title: 'Корзина',
+          isDashed: true,
+          list: [
+            {
+              name: 'Изделий шт',
+              value: '24'
+            },
+            {
+              name: 'Стоимость изд.',
+              value: '124 000 ₽'
+            }
+          ]
+        }
+      ]
+
+    .row.profile__row
+      each profileBlock in profileBlocks
+        .col-12.col-md-6.col-xxl-3.profile__col
+          +profile-block(profileBlock)
+
+    .profile__actions
+      +rounded-btn-with-text('link', 'Выйти из профиля', 'sign-out', false, false).profile__actions-btn.profile__actions-btn_sign-out
+
+block modals
+  +auth-modal()
+  +registration-modal()

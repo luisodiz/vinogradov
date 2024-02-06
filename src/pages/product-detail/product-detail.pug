@@ -1,0 +1,280 @@
+extends ../../layouts/layout-page/layout-page
+include ../../components/breadcrumbs/breadcrumbs
+include ../../components/title/title
+include ../../components/button/button
+include ../../components/tabs/tabs
+include ../../components/products-slider-section/products-slider-section
+
+include ../../components/modals/buy-one-click-modal/buy-one-click-modal
+include ../../components/modals/registration-modal/registration-modal
+include ../../components/modals/auth-modal/auth-modal
+include ../../components/modals/choose-size-modal/choose-size-modal
+include ../../components/modals/no-size-modal/no-size-modal
+include ../../components/modals/change-or-add-modal/change-or-add-modal
+
+block title
+  -var title = 'Голгофское кольцо 3674994'
+  title= title
+
+block before-content
+  -
+    const list = ['Главная', 'Каталог изделий', 'Кольца', 'Голгофское кольцо 3674994']
+  + breadcrumbs(list)
+
+block content
+  .product-detail
+    .row
+      .col-12.col-xxl-7
+        .product-photos
+          .slider-main
+            .slider-main__tag Новинка
+            .slider-main__add-to-favorite
+              +icon('heart').slider-main__add-to-favorite-icon
+            .swiper
+              .swiper-wrapper
+                .swiper-slide
+                  .slider-main__slide-container
+                    img.slider-main__img(src="img/product/1.png" alt="")
+                .swiper-slide
+                  .slider-main__slide-container
+                    video.slider-main__video(playsinline loop muted autoplay)
+                      source(src="video/1.mp4")
+                .swiper-slide
+                  .slider-main__slide-container
+                    img.slider-main__img(src="img/product/3.png" alt="")
+                .swiper-slide
+                  .slider-main__slide-container
+                    img.slider-main__img(src="img/product/1.png" alt="")
+                .swiper-slide
+                  .slider-main__slide-container
+                    img.slider-main__img(src="img/product/1.png" alt="")
+                .swiper-slide
+                  .slider-main__slide-container
+                    img.slider-main__img(src="img/product/1.png" alt="")
+                .swiper-slide
+                  .slider-main__slide-container
+                    img.slider-main__img(src="img/product/1.png" alt="")
+                .swiper-slide
+                  .slider-main__slide-container
+                    img.slider-main__img(src="img/product/1.png" alt="")
+                .swiper-slide
+                  .slider-main__slide-container
+                    img.slider-main__img(src="img/product/1.png" alt="")
+                .swiper-slide
+                  .slider-main__slide-container
+                    img.slider-main__img(src="img/product/1.png" alt="")
+                .swiper-slide
+                  .slider-main__slide-container
+                    img.slider-main__img(src="img/product/1.png" alt="")
+              .swiper-pagination
+          .slider-thumbs-container
+            .slider-thumbs
+              .swiper
+                .swiper-wrapper
+                  .swiper-slide
+                    .slider-thumbs__slide-container
+                      img.slider-thumbs__img(src="img/product/1.png" alt="")
+                  .swiper-slide.swiper-slide_video
+                    .slider-thumbs__slide-container
+                      +icon('play').slider-thumbs__play-icon
+                      img.slider-thumbs__img(src="img/product/2.png" alt="")
+                  .swiper-slide
+                    .slider-thumbs__slide-container
+                      img.slider-thumbs__img(src="img/product/3.png" alt="")
+                  .swiper-slide
+                    .slider-thumbs__slide-container
+                      img.slider-thumbs__img(src="img/product/1.png" alt="")
+                  .swiper-slide
+                    .slider-thumbs__slide-container
+                      img.slider-thumbs__img(src="img/product/1.png" alt="")
+                  .swiper-slide
+                    .slider-thumbs__slide-container
+                      img.slider-thumbs__img(src="img/product/1.png" alt="")
+                  .swiper-slide
+                    .slider-thumbs__slide-container
+                      img.slider-thumbs__img(src="img/product/1.png" alt="")
+                  .swiper-slide
+                    .slider-thumbs__slide-container
+                      img.slider-thumbs__img(src="img/product/1.png" alt="")
+                  .swiper-slide
+                    .slider-thumbs__slide-container
+                      img.slider-thumbs__img(src="img/product/1.png" alt="")
+                  .swiper-slide
+                    .slider-thumbs__slide-container
+                      img.slider-thumbs__img(src="img/product/1.png" alt="")
+                  .swiper-slide
+                    .slider-thumbs__slide-container
+                      img.slider-thumbs__img(src="img/product/1.png" alt="")
+            .slider-thumbs-nav
+              .slider-thumbs-nav__container
+                +icon('chevron-down').slider-thumbs-nav__next
+                +icon('chevron-up').slider-thumbs-nav__prev
+      .col-12.col-xxl-5
+        .product-desc
+          .product-desc__block
+            h1.product-desc__title Голгофское кольцо 3674994
+            span.product-desc__id Артикул: 03-10 - 02003 - 15
+            .product-desc__prices
+              .product-desc__prices-left
+                span.product-desc__price.product-desc__price_current 13 456 ₽
+                span.product-desc__price.product-desc__price_old 13 456 ₽
+              .product-desc__prices-right
+                +icon('info').product-desc__price-info
+
+          .product-desc__block
+            .product-desc__select-size
+              .product-desc__select-size-line
+                span.product-desc__select-size-title Размер
+                a(href="#" data-bs-toggle="modal" data-bs-target="#choose-size-modal").product-desc__select-size-link Как выбрать размер?
+              .product-desc__slider
+                .swiper
+                  .swiper-wrapper
+                    .swiper-slide
+                      .product-desc__slider-item 15.0
+                    .swiper-slide
+                      .product-desc__slider-item 15.5
+                    .swiper-slide
+                      .product-desc__slider-item 16.0
+                    .swiper-slide
+                      .product-desc__slider-item 16.5
+                    .swiper-slide
+                      .product-desc__slider-item 17.0
+                    .swiper-slide
+                      .product-desc__slider-item 17.5
+                    .swiper-slide
+                      .product-desc__slider-item 18.0
+                    .swiper-slide
+                      .product-desc__slider-item 18.0
+                    .swiper-slide
+                      .product-desc__slider-item 18.0
+                +icon('chevron-left').product-desc__slider-nav-prev
+                +icon('chevron-right').product-desc__slider-nav-next
+              .product-desc__list-wrap
+                .product-desc__list
+                  .product-desc__list-item
+                    span.product-desc__list-item-name Примерный вес
+                    span.product-desc__list-item-value 4.67 г.
+                  .product-desc__list-item
+                    span.product-desc__list-item-name Металл
+                    span.product-desc__list-item-value Серебро 925
+                  .product-desc__list-item
+                    span.product-desc__list-item-name Коллекция
+                    a(href="#").product-desc__list-item-value Возрождение
+                .product-desc__list(class="collapse" id="product-desc-list")
+                  .product-desc__list-item
+                    span.product-desc__list-item-name Примерный вес
+                    span.product-desc__list-item-value 4.67 г.
+                  .product-desc__list-item
+                    span.product-desc__list-item-name Металл
+                    span.product-desc__list-item-value Серебро 925
+                  .product-desc__list-item
+                    span.product-desc__list-item-name Коллекция
+                    a(href="#").product-desc__list-item-value Возрождение
+                .product-desc__list-toggle.collapsed(data-bs-toggle="collapse" data-bs-target="#product-desc-list")
+                  .product-desc__list-toggle-text Все характеристики
+                  +icon('play-down').product-desc__list-toggle-icon
+              .product-desc__actions
+                +button('Добавить в корзину').product-desc__action.product-desc__action_add-to-cart
+                +button('Купить в 1 клик', true)(data-bs-toggle="modal" data-bs-target="#buy-one-click-modal").product-desc__action.product-desc__action_one-click
+
+          .product-desc__block
+            .product-desc__links
+              a(href="#" data-bs-toggle="modal" data-bs-target="#change-or-add-modal").product-desc__link Хотите изменить/дополнить изделие?
+              a(href="#" data-bs-toggle="modal" data-bs-target="#no-size-modal").product-desc__link Нет нужного размера?
+
+    -
+      const tabs = [
+        {
+          label: 'Характеристики',
+          name: 'characteristics',
+          active: true
+        },
+        {
+          label: 'Описание изделия',
+          name: 'desc',
+        },
+        {
+          label: 'Молитва',
+          name: 'prayer',
+        },
+        {
+          label: 'Уход за изделием',
+          name: 'care',
+        },
+        {
+          label: 'Оплата и доставка',
+          name: 'pay',
+        }
+      ]
+    +tabs(tabs).product-desc__tabs
+      +slot('characteristics')
+        .row
+          .col-12.col-xxl-6
+            ul.tabs-list
+              li.tabs-list__item
+                span.tabs-list__item-name Артикул
+                span.tabs-list__item-value 03-10-02003-15
+              li.tabs-list__item
+                span.tabs-list__item-name Материал
+                span.tabs-list__item-value Серебро 925
+              li.tabs-list__item
+                span.tabs-list__item-name Примерный вес
+                span.tabs-list__item-value 4,67 г.
+              li.tabs-list__item
+                span.tabs-list__item-name Габариты
+                span.tabs-list__item-value 100х50 мм
+              li.tabs-list__item
+                span.tabs-list__item-name Вставки
+                span.tabs-list__item-value 23 фианита, 12 агатов
+          .col-12.col-xxl-6
+            ul.tabs-list
+              li.tabs-list__item
+                span.tabs-list__item-name Коллекция
+                a(href="#").tabs-list__item-value Возрождение
+              li.tabs-list__item
+                span.tabs-list__item-name Для кого
+                span.tabs-list__item-value Мужчины
+              li.tabs-list__item
+                span.tabs-list__item-name Покрытие
+                span.tabs-list__item-value Чернение
+              li.tabs-list__item
+                span.tabs-list__item-name Символы и лики
+                span.tabs-list__item-value Спас Нерукотворный
+              li.tabs-list__item
+                span.tabs-list__item-name Молитвы
+                span.tabs-list__item-value Молитва Отче наш
+
+      +slot('desc')
+        p В основу композиции печатки включены изображения Креста – орудия мучения Иисуса Христа, горы Голгофы, на вершине которой произошло это событие, головы Адама, покоящейся в её недрах, традиционно изображаемой у подножия Креста. Кроме того, сюда включены надписи, имеющие как пояснительный, так и сугубо сакральный характер.
+        p Изображение креста схематичное, (пропорции подобраны по золотому сечению) по краям креста изображены орудия страстей-копье и трость, они выполнены из жёлтого золота 585 пробы в технике инкрустации.
+        p Слева и справа от центральной перекладины буквы ИС ХС -Иисус Христос. В верхней части по краям от верхней перекладины- надпись Царь Славы. Под средней перекладиной креста расположена надпись НИКА - Победитель, означающая победу Иисуса Христа над смертью. Слева и справа от основания креста буквы МЛ РБ - "место лобное рай бысть" (лобное место стало раем).
+        p Верхняя перекладина с надписью ИНЦИ- Иисус Назорей Царь Иудейский и схематичное изображение Горы с изображением черепа-Головы Адама у основания креста также выполнены из жёлтого золота 585 пробы.
+        p Внутри кольца молитва Спаси и Сохрани обрамленная орнаментом по краям. В орнаменте размещён Логотип производителя, как знак качества. Так же на внутренней части отзеркалено изображение символики Голгофского креста.
+        p В нижней части шинки, на внешней стороне, в виде среза, изображена Хризма-монограмма имени Иисуса Христа.
+        p Каменная текстура символизирует гору Голгофу.
+      +slot('prayer')
+        p Молитва
+      +slot('care')
+        p Уход
+      +slot('pay')
+        p Оплата
+
+    .product-detail__video-section
+      h2.product-detail__video-section-title Как создавалось украшение
+      .video-plyr
+        .video-plyr__poster(style="background-image: url(img/video/poster.png)")
+          .video-plyr__play
+            +icon('play').video-plyr__play-icon
+        video.video-plyr__video(controls crossorigin playsinline poster="img/video/poster.png")
+          source(src="video/1.mp4" type="video/mp4")
+
+    +products-slider-section2('В другом исполнении').product-detail__other-performance
+    +products-slider-section2('Рекомендуем').product-detail__recommend
+
+block modals
+  +auth-modal()
+  +registration-modal()
+  +choose-size-modal()
+  +no-size-modal()
+  +change-or-add-modal()
+  +buy-one-click-modal()

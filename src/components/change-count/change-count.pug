@@ -1,0 +1,7 @@
+mixin change-count(isDisabled)
+  .change-count(class=`${isDisabled ? 'change-count_disabled' : ''}`)&attributes(attributes)
+    .change-count__button.change-count__button_minus
+      +icon('minus').change-count__button-icon
+    input(type="number" value="1" min="1").change-count__input
+    .change-count__button.change-count__button_plus
+      +icon('plus').change-count__button-icon

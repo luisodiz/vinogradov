@@ -1,0 +1,87 @@
+.no-size-modal {
+  &__text {
+    @include font-medium;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 20px;
+
+    @include tablet {
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__input {
+    margin-bottom: 20px;
+
+    @include tablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  .no-size-list {
+    margin-bottom: 30px;
+
+    @include tablet {
+      margin-bottom: 40px;
+    }
+
+    &__title {
+      @include font-medium;
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom: 5px;
+
+      @include tablet {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+
+    &__items {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -3px -5px;
+    }
+
+    &__col {
+      padding: 0 3px;
+    }
+
+    &__item {
+      margin-bottom: 5px;
+      height: 40px;
+      width: 58px;
+      padding: 10px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid $color-iron;
+      font-size: 14px;
+      line-height: 20px;
+      @include font-medium;
+      cursor: pointer;
+
+      @include tablet {
+        height: 46px;
+      }
+
+      &_active {
+        background: $color-tuatara;
+        color: $color-white;
+        border-color: $color-tuatara;
+      }
+    }
+  }
+
+  &__submit {
+    height: 46px;
+    width: 100%;
+
+    @include tablet {
+      height: 52px;
+      width: auto;
+    }
+  }
+}

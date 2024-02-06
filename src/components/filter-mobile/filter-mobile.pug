@@ -1,0 +1,119 @@
+include ../select-price/select-price
+include ../button/button
+
+mixin filter-mobile
+  .filter-mobile-wrap
+    .filter-mobile
+      .filter-mobile__top
+        .filter-mobile__close
+          +icon('close').filter-mobile__close-icon
+        .filter-mobile__reset.filter-mobile__reset_disabled
+          +icon('refresh').filter-mobile__reset-icon
+          span.filter-mobile__reset-text Сбросить
+      .filter-mobile__content
+        .filter-mobile__block
+          .filter-mobile__block-head(data-bs-toggle="collapse" data-bs-target="#filter-mobile-view")
+            span.filter-mobile__block-title Вид изделия
+            +icon('chevron-up').filter-mobile__block-icon
+          .filter-mobile__block-body
+            .filter-mobile__block-collapse(class="collapse show" id="filter-mobile-view")
+              .filter-mobile__block-collapse-inner
+                +radio-field('koltca', 'view2', 'Кольца', 'Кольца')
+                +radio-field('sergi', 'view2', 'Серьги', 'Серьги')
+                +radio-field('brasleti', 'view2', 'Браслеты', 'Браслеты')
+                +radio-field('kolie', 'view2', 'Колье', 'Колье')
+
+        .filter-mobile__block
+          .filter-mobile__block-head(data-bs-toggle="collapse" data-bs-target="#filter-mobile-for")
+            span.filter-mobile__block-title Для кого
+            +icon('chevron-up').filter-mobile__block-icon
+          .filter-mobile__block-body
+            .filter-mobile__block-collapse(class="collapse show" id="filter-mobile-for")
+              .filter-mobile__block-collapse-inner
+                +radio-field('male', 'for2', 'Мужчина', 'Мужчин')
+                +radio-field('female', 'for2', 'Женщина', 'Женщин')
+                +radio-field('child', 'for2', 'Ребенок', 'Детей')
+
+        .filter-mobile__block
+          .filter-mobile__block-head(data-bs-toggle="collapse" data-bs-target="#filter-mobile-material")
+            span.filter-mobile__block-title Материал
+            +icon('chevron-up').filter-mobile__block-icon
+          .filter-mobile__block-body
+            .filter-mobile__block-collapse(class="collapse show" id="filter-mobile-material")
+              .filter-mobile__block-collapse-inner
+                +radio-field('gold', 'material2', 'Золото', 'Золото', true)
+                +radio-field('silver', 'material2', 'Серебро', 'Серебро')
+
+        .filter-mobile__block
+          .filter-mobile__block-head(data-bs-toggle="collapse" data-bs-target="#filter-mobile-size")
+            span.filter-mobile__block-title Размер
+            +icon('chevron-up').filter-mobile__block-icon
+          .filter-mobile__block-body
+            .filter-mobile__block-collapse(class="collapse show" id="filter-mobile-size")
+              .filter-mobile__block-collapse-inner
+                +checkbox-field('15.5', 'size2[]', '15.5', '15.5')
+                +checkbox-field('16.0', 'size2[]', '16.0', '16.0')
+                +checkbox-field('17.5', 'size2[]', '17.5', '17.5')
+                +checkbox-field('18.0', 'size2[]', '18.0', '18.0')
+                +checkbox-field('18.5', 'size2[]', '18.5', '18.5')
+                +checkbox-field('19.0', 'size2[]', '19.0', '19.0')
+                +checkbox-field('19.5', 'size2[]', '19.5', '19.5')
+
+        .filter-mobile__block
+          .filter-mobile__block-head(data-bs-toggle="collapse" data-bs-target="#filter-mobile-vstavki")
+            span.filter-mobile__block-title Вставки
+            +icon('chevron-up').filter-mobile__block-icon
+          .filter-mobile__block-body
+            .filter-mobile__block-collapse(class="collapse show" id="filter-mobile-vstavki")
+              .filter-mobile__block-collapse-inner
+                +checkbox-field('ametist', 'vstavki2[]', 'Аметист', 'Аметист', true)
+                +checkbox-field('brilliant', 'vstavki2[]', 'Бриллиант', 'Бриллиант', true)
+                +checkbox-field('rubin', 'vstavki2[]', 'Рубин', 'Рубин')
+                +checkbox-field('fianit', 'vstavki2[]', 'Фианит', 'Фианит')
+                +checkbox-field('hrizolit', 'vstavki2[]', 'Хризолит', 'Хризолит')
+
+        .filter-mobile__block
+          .filter-mobile__block-head(data-bs-toggle="collapse" data-bs-target="#filter-mobile-collection")
+            span.filter-mobile__block-title Коллекция
+            +icon('chevron-up').filter-mobile__block-icon
+          .filter-mobile__block-body
+            .filter-mobile__block-collapse(class="collapse show" id="filter-mobile-collection")
+              .filter-mobile__block-collapse-inner
+                +checkbox-field('spasi-sohrani', 'collections2[]', 'Спаси и Сохрани', 'Спаси и Сохрани')
+                +checkbox-field('vozrozhdenie', 'collections2[]', 'Возрождение', 'Возрождение')
+                +checkbox-field('golgovskiy-krest', 'collections2[]', 'Голгофский крест', 'Голгофский крест')
+                +checkbox-field('vossoedinenie', 'collections2[]', 'Воссоединение', 'Воссоединение')
+                +checkbox-field('idilia', 'collections2[]', 'Идилия', 'Идилия')
+
+        .filter-mobile__block
+          .filter-mobile__block-head(data-bs-toggle="collapse" data-bs-target="#filter-mobile-price")
+            span.filter-mobile__block-title Цена
+            +icon('chevron-up').filter-mobile__block-icon
+          .filter-mobile__block-body
+            .filter-mobile__block-collapse(class="collapse show" id="filter-mobile-price")
+              .filter-mobile__block-collapse-inner
+                +select-price([
+                  { id: 'price1' },
+                  { id: 'price2' }
+                ])
+
+        .filter-mobile__block
+          .filter-mobile__block-head(data-bs-toggle="collapse" data-bs-target="#filter-mobile-obraz")
+            span.filter-mobile__block-title Образ
+            +icon('chevron-up').filter-mobile__block-icon
+          .filter-mobile__block-body
+            .filter-mobile__block-collapse(class="collapse show" id="filter-mobile-obraz")
+              .filter-mobile__block-collapse-inner
+                p Образ
+
+        .filter-mobile__block
+          .filter-mobile__block-head(data-bs-toggle="collapse" data-bs-target="#filter-mobile-sort")
+            span.filter-mobile__block-title Сортировка
+            +icon('chevron-up').filter-mobile__block-icon
+          .filter-mobile__block-body
+            .filter-mobile__block-collapse(class="collapse show" id="filter-mobile-sort")
+              .filter-mobile__block-collapse-inner
+                p Сортировка
+
+        .filter-mobile__submit-wrap
+          +button('Применить').filter-mobile__submit

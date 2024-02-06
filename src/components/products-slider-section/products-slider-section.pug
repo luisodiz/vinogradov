@@ -1,0 +1,15 @@
+include ../title/title
+include ../more-btn/more-btn
+include ../products-slider/products-slider
+
+mixin products-slider-section(title, moreText)
+  section.products-slider-section.section&attributes(attributes)
+    .container
+      +title('h2', title ? title : 'Рекомендуем', 'Все').products-slider-section__title
+      +products-slider()
+
+mixin products-slider-section2(title)
+  section.products-slider-section.section&attributes(attributes)
+    .title-wrapper
+      h2.products-slider-section__title= title ? title : 'Рекомендуем'
+    +products-slider()

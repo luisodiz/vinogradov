@@ -1,0 +1,9 @@
+include ../../../form/input-field/input-field
+
+mixin subs-form()
+  form.subs-form&attributes(attributes)
+    .subs-form__line
+      +input-field('Телефон', 'subs-phone', 'text', 'Телефон', '+7 999 999 99 99').subs-form__input
+      button(type="submit").subs-form__submit
+        +icon('message').subs-form__submit-icon
+    p.subs-form__rules Оставляя заявку, вы соглашаетесь на обработку <a href="#">Персональных данных</a>.

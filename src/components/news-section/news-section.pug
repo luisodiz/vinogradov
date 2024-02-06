@@ -1,0 +1,7 @@
+include ../title/title
+include ../news-slider/news-slider
+
+mixin news-section(title)
+  section.section.news-section&attributes(attributes)
+    +title('h2', title).news-section__title
+    +news-slider

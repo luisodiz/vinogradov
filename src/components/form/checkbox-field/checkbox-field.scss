@@ -1,0 +1,38 @@
+.checkbox-field {
+  $p: &;
+  position: relative;
+  display: inline-flex;
+  align-items: flex-start;
+
+  &__checkbox:checked ~ #{$p}__mask:before {
+    display: block;
+  }
+
+  &__mask {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    border: 1px solid $color-dove-gray;
+    margin-right: 5px;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background: $color-tuatara;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: none;
+    }
+  }
+
+  &__label {
+    font-size: 12px;
+    line-height: 20px;
+    cursor: pointer;
+  }
+}

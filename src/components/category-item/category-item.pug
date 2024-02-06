@@ -1,0 +1,7 @@
+include ../btn-rounded/btn-rounded
+
+mixin category-item(title, img)
+  a.category-item(href="#")&attributes(attributes)
+    img.category-item__bg(src=img)
+    h3.category-item__title= title
+    +btn-rounded('div', 'arrow-right', true).category-item__more

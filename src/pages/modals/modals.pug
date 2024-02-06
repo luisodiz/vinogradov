@@ -1,0 +1,48 @@
+extends ../../layouts/layout-page/layout-page
+include ../../components/breadcrumbs/breadcrumbs
+include ../../components/title/title
+include ../../components/modals/buy-one-click-modal/buy-one-click-modal
+include ../../components/modals/auth-modal/auth-modal
+include ../../components/modals/registration-modal/registration-modal
+include ../../components/modals/delete-profile-modal/delete-profile-modal
+include ../../components/modals/change-or-add-modal/change-or-add-modal
+include ../../components/modals/choose-size-modal/choose-size-modal
+include ../../components/modals/no-size-modal/no-size-modal
+
+block title
+  -var title = 'Модальные окна'
+  title= title
+
+block before-content
+  -
+    const list = ['Главная', 'Модальные окна']
+  + breadcrumbs(list)
+  +title('h1', 'Модальные окна')
+
+block content
+  button(type="button" class="button" data-bs-toggle="modal" data-bs-target="#buy-one-click-modal") Купить в один клик
+  +buy-one-click-modal
+  br
+  br
+  button(type="button" class="button" data-bs-toggle="modal" data-bs-target="#auth-modal") Авторизация
+  +auth-modal
+  br
+  br
+  button(type="button" class="button" data-bs-toggle="modal" data-bs-target="#registration-modal") Регистрация
+  +registration-modal
+  br
+  br
+  button(type="button" class="button" data-bs-toggle="modal" data-bs-target="#delete-profile-modal") Удалить профиль
+  +delete-profile-modal
+  br
+  br
+  button(type="button" class="button" data-bs-toggle="modal" data-bs-target="#change-or-add-modal") Хотите изменить/дополнить изделие?
+  +change-or-add-modal
+  br
+  br
+  button(type="button" class="button" data-bs-toggle="modal" data-bs-target="#choose-size-modal") Как выбрать размер
+  +choose-size-modal
+  br
+  br
+  button(type="button" class="button" data-bs-toggle="modal" data-bs-target="#no-size-modal") Нет нужного размера
+  +no-size-modal

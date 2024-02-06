@@ -1,0 +1,11 @@
+.news-section {
+  .title {
+    font-size: 24px;
+    line-height: 30px;
+
+    @include tablet {
+      font-size: 28px;
+      line-height: 140%;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+mixin checkbox-field(id, name, value, label, checked, isAgree)
+  .checkbox-field&attributes(attributes)
+    if (checked)
+      input(id= id type="checkbox" name= name value= value checked).visually-hidden.checkbox-field__checkbox
+    else
+      input(id= id type="checkbox" name= name value= value).visually-hidden.checkbox-field__checkbox
+    .checkbox-field__mask
+    if (!isAgree && label)
+      label(for= id).checkbox-field__label= label
+    else
+      label(for= id).checkbox-field__label Я согласен на обработку <a href="#">персональных данных</a>

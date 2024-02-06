@@ -1,0 +1,13 @@
+.layout-page {
+  &-container {
+    padding-bottom: 30px;
+
+    @include tablet {
+      padding-bottom: 30px;
+    }
+
+    @include desktop {
+      padding-bottom: 40px;
+    }
+  }
+}

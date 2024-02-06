@@ -1,0 +1,45 @@
+.btn-rounded {
+  $p: &;
+  width: 40px;
+  height: 40px;
+  border: 1px solid $color-dove-gray;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  cursor: pointer;
+  text-decoration: none;
+  @include transition-main();
+
+  @include tablet {
+    width: 46px;
+    height: 46px;
+  }
+
+  &:hover {
+    text-decoration: none;
+    background: $color-tuatara;
+    border: 1px solid $color-tuatara;
+
+    #{$p}__icon {
+      stroke: $color-white;
+    }
+  }
+
+  &_light {
+    border: 1px solid $color-white;
+
+    #{$p}__icon {
+      stroke: $color-white;
+    }
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    stroke: $color-tuatara;
+    @include transition-main();
+  }
+}

@@ -1,0 +1,25 @@
+mixin tabs(items)
+  - const slots = {}
+  - const tabActive = function (t) { return t.active ? 'active' : '' }
+
+  mixin slot(key)
+    - slots[key] = block;
+
+  block
+
+  - items[0].active = items[0].active || !items.some(function (t) { return t.active; })
+
+  .tabs&attributes(attributes)
+    .tabs__buttons
+      ul.nav.tabs__nav
+        each item in items
+          li.tabs__nav-item
+            button(type="button", data-bs-target=`#${item.name}`, data-bs-toggle="tab", class=`${tabActive(item)}`).tabs__nav-button.nav-link= item.label
+
+
+    .tabs__items
+      each item in items
+        if slots[item.name]
+          .tabs__item.fade(id=item.name class=`${item.active ? 'show active' : ''}`)
+            - slots[item.name]()
+

@@ -1,0 +1,3 @@
+mixin add-to-favorites(isFavorite)
+  button(type="button" class=`${isFavorite ? 'add-to-favorites_active' : ''}`).add-to-favorites&attributes(attributes)
+    +icon('heart').add-to-favorites__icon

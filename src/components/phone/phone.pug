@@ -1,0 +1,2 @@
+mixin phone(number, href)
+  a.phone(href=`${href ? 'tel:' + href : '#'}`)&attributes(attributes)= number

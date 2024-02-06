@@ -1,0 +1,50 @@
+extends ../../layouts/layout-page/layout-page
+include ../../components/breadcrumbs/breadcrumbs
+include ../../components/title/title
+include ../../components/socials/socials
+include ../../components/map/map
+
+include ../../components/modals/registration-modal/registration-modal
+include ../../components/modals/auth-modal/auth-modal
+
+block title
+  -var title = 'Контакты'
+  title= title
+
+block before-content
+  -
+    const list = ['Главная', 'Контакты']
+  + breadcrumbs(list)
+  +title('h1', 'Контакты')
+
+block content
+  .row.contacts-row
+    .col-12.col-xxl-4.contacts-col
+      .contacts-block
+        h3.contacts-block__title Производство
+        ul.contacts-block__list
+          li.contacts-block__list-item Телефон: <a href="tel:+78006008533">8 (800) 600-85-33</a>
+          li.contacts-block__list-item Email: <a href="info@vinogradov925.com">info@vinogradov925.com</a>
+          li.contacts-block__list-item Адрес: <span>г. Кострома, ул. Петра Щербины, 2</span>
+    .col-12.col-xxl-4.contacts-col
+      .contacts-block
+        h3.contacts-block__title Отдел продаж
+        ul.contacts-block__list
+          li.contacts-block__list-item Телефон: <a href="tel:+78006008533">8 (800) 600-85-33</a>
+          li.contacts-block__list-item Email: <a href="info@vinogradov925.com">info@vinogradov925.com</a>
+          li.contacts-block__list-item Работаем: <span>пн-пт 9:00-18:00<span>
+    .col-12.col-xxl-4.contacts-col
+      .contacts-block
+        h3.contacts-block__title Задать вопрос
+        p Мы открыты для общения в социальных сетях, мессенджерах, а так же по электронной почте
+        +socials2().contacts-block__socials
+
+block after-content
+  +map()
+
+block modals
+  +auth-modal()
+  +registration-modal()
+
+block scripts
+  script(src="https://api-maps.yandex.ru/2.1/?apikey=e8b50acb-d6a9-4e3d-9fa6-38769992431d&lang=ru_RU" type="text/javascript")

@@ -1,0 +1,43 @@
+@import "~normalize.css/normalize.css";
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "./helpers/vars";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/bootstrap-grid";
+
+@import "./base/fonts";
+@import "./helpers/colors";
+@import "./helpers/mixins";
+@import "./base/general";
+@import "./base/sprite";
+
+@import "~swiper/css/bundle";
+@import "~bootstrap/scss/modal";
+@import "~bootstrap/scss/transitions";
+
+@import "../pug/components/header/header";
+@import "../pug/components/footer/footer";
+
+// layouts
+@import "../layouts/layout-default/layout-default";
+@import "../layouts/layout-page/layout-page";
+
+// components
+@import "../components/components";
+
+// pages
+@import "../pages/home/home";
+@import "../pages/favorites/favorites";
+@import "../pages/contacts/contacts";
+@import "../pages/collections/collections";
+@import "../pages/collection-detail/collecton-detail";
+@import "../pages/blog/blog";
+@import "../pages/blog-detail/blog-detail";
+@import "../pages/brand/brand";
+@import "../pages/profile/profile";
+@import "../pages/orders/orders";
+@import "../pages/personal-data/personal-data";
+@import "../pages/order-detail/order-detail";
+@import "../pages/basket/basket";
+@import "../pages/catalog/catalog";
+@import "../pages/product-detail/product-detail";

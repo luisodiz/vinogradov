@@ -1,0 +1,23 @@
+include ../btn-rounded/btn-rounded
+include ../products-slider/products-slider
+
+mixin collections-item(title, img, isReverse)
+  .collections-item(class=`${isReverse ? 'collections-item_reverse' : ''}`)&attributes(attributes)
+    .row.collections-item__block-row
+      if (isReverse)
+        .col-12.col-xxl-7.offset-xxl-5
+          a(href="#").collections-item__block
+            img(src=img alt="").collections-item__bg
+            h3.collections-item__title= title
+            +btn-rounded('div', 'arrow-right', true).collections-item__more
+            //+more-btn(false, false, false, 'light', false, true).collections-item__more-btn
+      else
+        .col-12.col-xxl-7
+          a(href="#").collections-item__block
+            img(src=img alt="").collections-item__bg
+            h3.collections-item__title= title
+            +btn-rounded('div', 'arrow-right', true).collections-item__more
+            //+more-btn(false, false, false, 'light', false, true).collections-item__more-btn
+    .row.collections-item__slider-row
+      .col-12
+        +products-slider2()

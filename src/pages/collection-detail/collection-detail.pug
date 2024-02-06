@@ -1,0 +1,110 @@
+extends ../../layouts/layout-page/layout-page
+include ../../components/breadcrumbs/breadcrumbs
+include ../../components/title/title
+include ../../components/filter/filter
+include ../../components/filter-mobile/filter-mobile
+include ../../components/product/product
+include ../../components/rounded-btn-with-text/rounded-btn-with-text
+include ../../components/show-more-line/show-more-line
+
+include ../../components/modals/registration-modal/registration-modal
+include ../../components/modals/auth-modal/auth-modal
+
+block title
+  -var title = 'Коллекция Гора Голгофа'
+  title= title
+
+block before-content
+  -
+    const list = ['Главная', 'Каталог изделий', 'Коллекция Гора Голгофа']
+  +breadcrumbs(list)
+  +title('h1', 'Коллекция Гора Голгофа')
+
+block content
+  .collection-detail
+    +filter
+    +filter-mobile
+
+    .collection-detail__img-container
+      img(src="img/collections/2.jpg").collection-detail__img-bg
+    .collection-detail__info
+      .collection-detail__info-head
+        span.collection-detail__info-title О коллекции
+        .collection-detail__info-toggle(data-bs-toggle="collapse" data-bs-target="#info-collapse")
+          +icon('minus').collection-detail__info-toggle-icon.collection-detail__info-toggle-icon_minus
+          +icon('plus').collection-detail__info-toggle-icon.collection-detail__info-toggle-icon_plus
+      .collection-detail__info-body.collapse.show(id="info-collapse")
+        .collection-detail__info-body-inner
+          p В основу идеи коллекции «Гора Голгофа» вошло изображение Голгофского креста и каменной текстуры, символизирующей гору Голгофа.
+          p Голгофский Крест представляет собой стилизованную картину события, происшедшего более двух тысяч лет назад в Палестине.
+          p Гора Голгофа – это священное место для христианства на краю израильского города Иерусалим. Сюда, по поверью, нёс свой крест Сын Божий, здесь же принял мученическую смерть.
+          p Духовный смысл слова Голгофа имеет немаловажное значение.
+          p На иврите «голгофа» — значит «лобное место». А на арамейском – череп. Возможно из-за того, что по форме своей гора немного напоминает человеческий череп. А возможно – из-за количества похороненных тут людей. Ведь еще одно значение названия может переводиться как два отдельных слова: «Гол-Гофа» - «Гора казни». Здесь, и правда, проходили многочисленные казни.
+          p Голгофский Крест, означает прежде всего, олицетворение самопожертвование и избавление от грехов людей путем мучений Иисуса. Распятие даровало способность Спасителю принять смерть с раскрытыми объятьями, принимая «все уголки земли». Он держит и призывает под свою защиту весь земной мир и несет на Себе новозаветный символ Креста, как алтаря, дарующего каждому из нас Спасение.
+
+    .catalog__content
+      -
+        const item = {
+          img: 'img/product/1.png',
+          prices: {
+            current: '14 567 р.',
+            old: '16 727 р.'
+          },
+          tags: ['Новинка'],
+          favorite: false,
+        }
+      .row.catalog__row
+        .col-6.col-xxl-3.catalog__col
+          +product(item)
+        .col-6.col-xxl-3.catalog__col
+          +product(item)
+        .col-6.col-xxl-3.catalog__col
+          +product(item)
+        .col-6.col-xxl-3.catalog__col
+          +product(item)
+        .col-6.col-xxl-3.catalog__col
+          +product(item)
+        .col-6.col-xxl-3.catalog__col
+          +product(item)
+        .col-6.col-xxl-3.catalog__col
+          +product(item)
+        .col-6.col-xxl-3.catalog__col
+          +product(item)
+        .col-12
+          .row
+            .col-12.col-xxl-6
+              .row
+                .col-6.catalog__col
+                  +product(item)
+                .col-6.catalog__col
+                  +product(item)
+              .row
+                .col-6.catalog__col
+                  +product(item)
+                .col-6.catalog__col
+                  +product(item)
+            .col-12.col-xxl-6.catalog__banner-col.catalog__col
+              a.catalog__banner(href="#")
+                img(src="img/catalog/banner.jpg" alt="").catalog__banner-img
+                +rounded-btn-with-text('div', 'Показать образ', 'arrow-right')
+        .col-6.col-xxl-3.catalog__col
+          +product(item)
+        .col-6.col-xxl-3.catalog__col
+          +product(item)
+        .col-6.col-xxl-3.catalog__col
+          +product(item)
+        .col-6.col-xxl-3.catalog__col
+          +product(item)
+        .col-6.col-xxl-3.catalog__col
+          +product(item)
+        .col-6.col-xxl-3.catalog__col
+          +product(item)
+        .col-6.col-xxl-3.catalog__col
+          +product(item)
+        .col-6.col-xxl-3.catalog__col
+          +product(item)
+      +show-more-line
+
+block modals
+  +auth-modal()
+  +registration-modal()

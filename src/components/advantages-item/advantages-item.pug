@@ -1,0 +1,7 @@
+mixin advantages-item(title, text, icon)
+  .advantages-item&attributes(attributes)
+    .advantages-item__icon-wrap
+      .advantages-item__icon-block
+        +icon(icon).advantages-item__icon
+    h4.advantages-item__title= title
+    p.advantages-item__text= text

@@ -1,0 +1,30 @@
+include ../phone-select/phone-select
+include ../logo/logo
+include ../search/search
+include ../auth-block/auth-block
+
+mixin header-top(isAuthorized)
+  .header-top&attributes(attributes)
+    .container
+      .header-top__inner
+        +phone-select().header-top__phone-select
+        button(type="button").header-top__burger
+          +icon('burger').header-top__burger-icon
+        +logo().header-top__logo
+        +search().header-top__search
+        if (!isAuthorized)
+          +auth-block().header-top__auth-block
+        else
+          +auth-block(true).header-top__auth-block.auth-block_not-authorized
+        .header-top__actions.header-top__actions_mobile-margin
+          button(type="button").header-top__actions-button.header-top__actions-button_search
+            .header-top__actions-icon-wrap
+              +icon('search').header-top__actions-icon.header-top__actions-icon_search
+          button(type="button").header-top__actions-button
+            .header-top__actions-icon-wrap
+              +icon('heart').header-top__actions-icon.header-top__actions-icon_heart
+              span.header-top__actions-count.header-top__actions-count_favorites.header-top__actions-count_no-items 0
+          button(type="button").header-top__actions-button
+            .header-top__actions-icon-wrap
+              +icon('bag').header-top__actions-icon.header-top__actions-icon_bag
+              span.header-top__actions-count.header-top__actions-count_basket 325

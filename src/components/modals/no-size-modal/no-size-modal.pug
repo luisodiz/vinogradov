@@ -1,0 +1,27 @@
+include ../modal-base/modal-base
+include ../../form/input-field/input-field
+include ../../button/button
+
+mixin no-size-modal
+  +modal-base('no-size-modal', 'Нет нужного размера').no-size-modal
+    +slot('body')
+      p.no-size-modal__text Укажите email-адрес и размер изделия, мы сообщим, когда изделие появится в интернет-магазине
+      +input-field('Email', 'no-size-email', 'email', 'Email').no-size-modal__input
+      .no-size-list
+        .no-size-list__title Выберите размер
+        .no-size-list__items
+          .no-size-list__col
+            .no-size-list__item.no-size-list__item_active(data-value="16.0") 16.0
+          .no-size-list__col
+            .no-size-list__item(data-value="16.5") 16.5
+          .no-size-list__col
+            .no-size-list__item(data-value="17.0") 17.0
+          .no-size-list__col
+            .no-size-list__item(data-value="17.5") 17.5
+          .no-size-list__col
+            .no-size-list__item(data-value="18.0") 18.0
+          .no-size-list__col
+            .no-size-list__item(data-value="18.5") 18.5
+      +button('Отправить').no-size-modal__submit
+
+

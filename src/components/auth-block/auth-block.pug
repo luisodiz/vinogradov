@@ -1,0 +1,7 @@
+mixin auth-block(isAuthorized)
+  .auth-block&attributes(attributes)
+    if (!isAuthorized)
+      a(href="#" data-bs-toggle="modal" data-bs-target="#registration-modal").auth-block__link Регистрация/Вход
+    else
+      a(href="#").auth-block__link
+        +icon('user').auth-block__user-icon

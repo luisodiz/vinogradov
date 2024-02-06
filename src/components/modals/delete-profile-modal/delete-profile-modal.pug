@@ -1,0 +1,13 @@
+include ../modal-base/modal-base
+include ../../button/button
+
+mixin delete-profile-modal
+  +modal-base('delete-profile-modal').delete-profile-modal
+    +slot('body')
+      .delete-profile-modal__icon-wrap
+        +icon('trash').delete-profile-modal__icon
+      .delete-profile-modal__title Удаление профиля
+      p.delete-profile-modal__text Вы действительно хотите удалить профиль? Отментить это действие будет невозможно
+      .delete-profile-modal__buttons
+        +button('Нет, отменить', true).delete-profile-modal__button.delete-profile-modal__button_no(data-bs-dismiss="modal", aria-label="Close")
+        +button('Да, отменить').delete-profile-modal__button.delete-profile-modal__button_yes

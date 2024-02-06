@@ -1,0 +1,16 @@
+mixin textarea-field(label, name, placeholder, error, disabled, value)
+  if (disabled)
+    .textarea-field&attributes(attributes)
+      .textarea-field__inner
+        textarea(name= name placeholder= placeholder disabled).textarea-field__textarea= value
+        label(for= name).textarea-field__label= label
+      if (error)
+        .textarea-field__error= error
+  else
+    .textarea-field(class=`${error ? 'is-error' : ''}`)&attributes(attributes)
+      .textarea-field__inner
+        textarea(name= name placeholder= placeholder).textarea-field__textarea= value
+        span.textarea-field__label-bg
+        label(for= name).textarea-field__label= label
+      if (error)
+        .textarea-field__error= error

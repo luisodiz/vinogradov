@@ -1,0 +1,65 @@
+.rounded-btn-with-text {
+  $p: &;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+
+
+  &:hover {
+    #{$p}__icon-wrap {
+      background: $color-tuatara;
+    }
+
+    #{$p}__icon {
+      stroke: $color-white;
+    }
+  }
+
+  &__icon-wrap {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    border: 1px solid $color-tuatara;
+    border-radius: 50%;
+    @include transition-main;
+
+    @include tablet {
+      width: 46px;
+      height: 46px;
+    }
+  }
+
+  &__icon {
+    flex: 0 0 20px;
+    width: 20px;
+    height: 20px;
+    stroke: $color-tuatara;
+    @include transition-main;
+  }
+
+  &__text {
+    @include font-medium;
+    font-size: 14px;
+    line-height: 20px;
+    color: $color-tuatara;
+
+    @include tablet {
+      font-size: 16px;
+      line-height: 150%;
+    }
+  }
+
+  &:hover {
+    text-decoration: none;
+
+    #{$p}__text {
+      color: $color-dove-gray;
+    }
+  }
+
+  &_reverse {}
+}

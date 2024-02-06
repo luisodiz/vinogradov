@@ -1,0 +1,68 @@
+include ../../../components/socials/socials
+
+footer.footer
+  .container
+    .row
+      .col-12.col-xxl-3
+        .footer__logo-wrap
+          a.logo.logo_v2.footer__logo(href="/")
+            img(src="img/svg-icons/logo2.svg").logo__img
+          .footer__company-desc-wrap
+            span.footer__company-desc Производство и продажа авторских ювелирных изделий оптом и в прозницу
+      .col-12.col-xxl-9
+        .row.footer__center
+          .col-12.col-md-4.footer__block
+            .footer__list-block
+              .footer__list-title-wrap
+                h3.footer__list-title Информация
+                span.footer__list-chevron
+                  +icon('chevron-up').footer__list-chevron-icon
+              ul.footer__list.list-unstyled
+                li.footer__list-item
+                  a.footer__list-link(href="#") О бренде
+                li.footer__list-item
+                  a.footer__list-link(href="#") Вопрос-ответ
+                li.footer__list-item
+                  a.footer__list-link(href="#") Оплата и доставка
+                li.footer__list-item
+                  a.footer__list-link(href="#") Гарантия и возврат
+                li.footer__list-item
+                  a.footer__list-link(href="#") Контакты
+          .col-12.col-md-4.footer__block
+            .footer__list-block
+              .footer__list-title-wrap
+                h3.footer__list-title Каталог
+                span.footer__list-chevron
+                  +icon('chevron-up').footer__list-chevron-icon
+            ul.footer__list.list-unstyled
+              li.footer__list-item
+                a.footer__list-link(href="#") Кольца
+              li.footer__list-item
+                a.footer__list-link(href="#") Серьги
+              li.footer__list-item
+                a.footer__list-link(href="#") Кресты
+              li.footer__list-item
+                a.footer__list-link(href="#") Подвески
+              li.footer__list-item
+                a.footer__list-link(href="#") Браслеты
+              li.footer__list-item
+                a.footer__list-link(href="#") Шнурки и цепи
+          .col-12.col-md-4.footer__block
+            .footer__list-block
+              .footer__list-title-wrap
+                h3.footer__list-title Контакты
+            ul.footer__list.list-unstyled
+              li.footer__list-item
+                a.footer__list-link(href="tel:+78006008533") 8 (800) 600-85-33
+              li.footer__list-item
+                a.footer__list-link(href="mailto:info@vinogradov925.com") info@vinogradov925.com
+              li.footer__list-item
+                span г. Кострома, ул. Петра Щербины, 2
+            +socials().footer__socials
+          .col-12.footer__bottom
+            span.footer__bottom-item &copy; 2022 Ювелирная компания «Виноградов»
+            a.footer__bottom-item(href="#") Обработка персональных данных
+            span.footer__creator.footer__bottom-item Разработка сайта —
+              |
+              | <a href="#" class="footer__creator-link">Verb:UM</a>
+

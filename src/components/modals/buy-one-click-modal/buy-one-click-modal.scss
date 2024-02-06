@@ -1,0 +1,169 @@
+.buy-one-click-modal {
+  .modal-product {
+    display: flex;
+
+    &__img-wrap {
+      width: 60px;
+      height: 60px;
+      flex-shrink: 0;
+      background: $color-black-haze;
+      margin-right: 15px;
+
+      @include tablet {
+        width: 100px;
+        height: 100px;
+      }
+    }
+
+    &__img {
+      width: 100%;
+      height: 100%;
+      @include object-fit(cover, center);
+    }
+
+    &__body {
+      flex-grow: 1;
+    }
+
+    &__title {
+      @include font-medium;
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom: 5px;
+
+      @include tablet {
+        font-size: 18px;
+        line-height: 150%;
+        margin-bottom: 10px;
+      }
+    }
+
+    &__info {
+      margin-bottom: 5px;
+
+      &-item {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+
+        &:not(:last-child) {
+          margin-bottom: 5px;
+
+          @include tablet {
+            margin-bottom: 10px;
+          }
+        }
+
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          border-bottom: 1px dashed $color-iron;
+        }
+
+        &-name {
+          padding: 0 5px 0 0;
+          background: $color-white;
+          z-index: 2;
+          @include font-medium;
+          font-size: 12px;
+          line-height: 18px;
+          color: $color-dove-gray;
+
+          @include tablet {
+            font-size: 14px;
+            line-height: 20px;
+          }
+        }
+
+        &-value {
+          padding: 0 0 0 5px;
+          background: $color-white;
+          z-index: 2;
+          @include font-medium;
+          font-size: 12px;
+          line-height: 18px;
+          color: $color-tuatara;
+
+          @include tablet {
+            font-size: 14px;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+
+    &__prices {
+      display: flex;
+      align-items: center;
+    }
+
+    &__price {
+      &_current {
+        @include font-semibold;
+        font-size: 14px;
+        line-height: 20px;
+        margin-right: 5px;
+
+        @include tablet {
+          font-size: 18px;
+          line-height: 150%;
+          margin-right: 10px;
+        }
+      }
+
+      &_old {
+        @include font-medium;
+        font-size: 12px;
+        line-height: 150%;
+        color: $color-dove-gray;
+        text-decoration: line-through;
+
+        @include tablet {
+          font-size: 14px;
+          line-height: 150%;
+        }
+      }
+    }
+  }
+
+  &__form {
+    margin-top: 30px;
+
+    .input-field {
+      margin-bottom: 10px;
+    }
+
+    .textarea-field {
+      margin-bottom: 10px;
+
+      @include tablet {
+        margin-bottom: 20px;
+      }
+    }
+
+    .checkbox-field {
+      margin-bottom: 30px;
+
+      &__label {
+        @include tablet {
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+    }
+
+    &-submit {
+      height: 46px;
+      width: 100%;
+
+      @include tablet {
+        height: 52px;
+        width: auto;
+      }
+    }
+  }
+}

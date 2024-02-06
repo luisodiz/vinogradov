@@ -1,0 +1,67 @@
+extends ../../layouts/layout-page/layout-page
+include ../../components/breadcrumbs/breadcrumbs
+include ../../components/product/product
+include ../../components/title/title
+include ../../components/show-more-line/show-more-line
+
+include ../../components/modals/registration-modal/registration-modal
+include ../../components/modals/auth-modal/auth-modal
+
+block title
+  -var title = 'Избранное'
+  title= title
+
+block before-content
+  -
+    const list = ['Главная', 'Избранное']
+  + breadcrumbs(list)
+  +title('h1', 'Избранное')
+
+block content
+  .favorites
+    -
+      const item = {
+        img: 'img/product/1.png',
+        prices: {
+          current: '14 567 р.',
+          old: '16 727 р.'
+        },
+        tags: ['Новинка'],
+        favorite: true,
+      }
+
+      const itemsWithCount = [
+        {
+          img: 'img/product/2.png',
+          prices: {
+            current: '14 567 р.',
+            old: '16 727 р.'
+          },
+          tags: ['Новинка'],
+          favorite: true,
+          count: 10
+        },
+        {
+          img: 'img/product/3.png',
+          prices: {
+            current: '14 567 р.',
+            old: '16 727 р.'
+          },
+          tags: ['Новинка'],
+          favorite: true,
+          count: 5
+        }
+      ]
+
+      const items = new Array(22).fill(item)
+      items.unshift(...itemsWithCount)
+
+    .row.favorites__row
+      each item in items
+        .col-6.col-xxl-3.favorites__col
+          +product(item)
+    +show-more-line()
+
+block modals
+  +auth-modal()
+  +registration-modal()

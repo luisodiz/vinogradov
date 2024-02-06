@@ -1,0 +1,31 @@
+extends ../../layouts/layout-page/layout-page
+include ../../components/breadcrumbs/breadcrumbs
+include ../../components/title/title
+include ../../components/show-more-line/show-more-line
+include ../../components/collections-item/collections-item
+
+include ../../components/modals/registration-modal/registration-modal
+include ../../components/modals/auth-modal/auth-modal
+
+block title
+  -var title = 'Коллекции'
+  title= title
+
+block before-content
+  -
+    const list = ['Главная', 'Коллекции']
+  +breadcrumbs(list)
+  +title('h1', 'Коллекции')
+
+block content
+  .collections-block
+    .collections__block-list
+      +collections-item('Молитва', 'img/collections/1.jpg')
+      +collections-item('Гора Голгофа', 'img/collections/2.jpg', true)
+      +collections-item('Молитва', 'img/collections/1.jpg')
+      +collections-item('Гора Голгофа', 'img/collections/2.jpg', true)
+    +show-more-line
+
+block modals
+  +auth-modal()
+  +registration-modal()

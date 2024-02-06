@@ -1,0 +1,75 @@
+.order-detail {
+  &__block {
+    padding: 15px;
+    background: $color-black-haze;
+
+    @include tablet {
+      padding: 30px;
+    }
+
+    &-status {
+      display: inline-block;
+      font-size: 12px;
+      line-height: 18px;
+      padding: 1px 6px;
+      background: $color-iron;
+      color: $color-tuatara;
+      @include font-medium;
+      margin-bottom: 15px;
+
+      @include tablet {
+        margin-bottom: 20px;
+        padding: 2px 6px;
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+  }
+
+  &__list {
+    margin-bottom: -10px;
+
+    @include tablet {
+      margin-bottom: -20px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 20px;
+    @include font-medium;
+
+    @include tablet {
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 20px;
+    }
+
+    &-title {
+      display: block;
+      margin-bottom: 5px;
+      color: $color-dove-gray;
+    }
+
+    &-value {
+      color: $color-tuatara;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__cart-section {
+    margin-top: 30px;
+
+    @include tablet {
+      margin-top: 40px;
+    }
+
+    @include desktop {
+      margin-top: 64px;
+    }
+  }
+}

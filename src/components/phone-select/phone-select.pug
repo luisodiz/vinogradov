@@ -1,0 +1,17 @@
+include ../phone/phone
+include ../button/button
+
+mixin phone-select()
+  .phone-select&attributes(attributes)
+    .phone-select__main-phone
+      +phone('8 (800) 600-85-33', '+78006008533').phone-select__main-phone-number
+      +icon('play-down').phone-select__main-phone-toggle-list-icon
+    .phone-select__list-wrap
+      .phone-select__list
+        .phone-select__list-item
+          +phone('8 (800) 600-85-33', '+78006008533').phone-select__list-item-number
+          span.phone-select__list-item-text Бесплатно по России
+        .phone-select__list-item
+          +phone('8 (800) 600-85-33', '+78006008533').phone-select__list-item-number
+          span.phone-select__list-item-text Отдел оптовых продаж
+      +button('Заказать звонок').phone-select__order-call

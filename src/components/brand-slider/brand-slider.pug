@@ -1,0 +1,17 @@
+mixin brand-slider
+  -
+    const items = [
+      'img/brand/1.jpg',
+      'img/brand/1.jpg',
+      'img/brand/1.jpg',
+      'img/brand/1.jpg',
+      'img/brand/1.jpg',
+    ]
+
+  .brand-slider&attributes(attributes)
+    .swiper.brand-slider__swiper
+      .swiper-wrapper
+        each item in items
+          .swiper-slide.brand-slider__slide
+            img.brand-slider__img(src= item alt="")
+    .brand-slider__pagination

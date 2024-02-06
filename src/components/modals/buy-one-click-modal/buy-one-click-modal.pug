@@ -1,0 +1,30 @@
+include ../modal-base/modal-base
+include ../../form/input-field/input-field
+include ../../form/textarea-field/textarea-field
+include ../../form/checkbox-field/checkbox-field
+include ../../button/button
+
+mixin buy-one-click-modal
+  +modal-base('buy-one-click-modal', 'Купить в один клик').modal_buy-one-click
+    +slot('body')
+      .modal-product
+        .modal-product__img-wrap
+          img.modal-product__img(src="img/product/1.png" alt="")
+        .modal-product__body
+          h5.modal-product__title Голгофское кольцо 3674994
+          ul.modal-product__info
+            li.modal-product__info-item
+              span.modal-product__info-item-name Размер
+              span.modal-product__info-item-value 16.5
+          .modal-product__prices
+            span.modal-product__price.modal-product__price_current 7 500 ₽
+            span.modal-product__price.modal-product__price_old 8 240 ₽
+
+      form.buy-one-click-modal__form
+        +input-field('ФИО', 'one-click-fio', 'text', 'ФИО')
+        +input-field('Телефон', 'one-click-phone', 'text', 'Телефон', '+7 999 999 99 99')
+        +input-field('Email', 'one-click-password', 'email', 'Еmail')
+        +textarea-field('Комментарий к заказу', 'one-click-comment', 'Комментарий к заказу')
+        +checkbox-field('one-click-agree', 'one-click-agree', 'agree', false, false, true)
+        +button('Отправить')(type="submit").buy-one-click-modal__form-submit
+

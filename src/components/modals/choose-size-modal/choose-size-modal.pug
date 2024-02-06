@@ -1,0 +1,23 @@
+include ../modal-base/modal-base
+include ../../form/input-field/input-field
+
+mixin choose-size-modal
+  +modal-base('choose-size-modal', 'Как выбрать размер').choose-size-modal
+    +slot('body')
+      .choose-size-modal__steps
+        .choose-size-modal__step
+          .choose-size-modal__step-icon-wrap
+            +icon('thread1').choose-size-modal__step-icon
+          .choose-size-modal__step-text Обмотайте нужный палец ниткой, шнурком или бумажной лентой
+        .choose-size-modal__step
+          .choose-size-modal__step-icon-wrap
+            +icon('measuring-tape1').choose-size-modal__step-icon
+          .choose-size-modal__step-text Линейкой замерьте полученную длину нити
+      .choose-size-modal__calc-size
+        +input-field('Введите длину нити в мм', 'choose-size-length', 'number', 'Введите длину нити в мм').choose-size-modal__calc-size-input
+        .choose-size-modal__calc-size-result Ваш размер:
+          |
+          |
+          span не определен
+      a(href="#").choose-size-modal__link Подробнее о выборе размера
+

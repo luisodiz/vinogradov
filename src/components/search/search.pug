@@ -1,0 +1,13 @@
+include ./search-list/search-list
+
+mixin search()
+  form.search&attributes(attributes)
+    .search__input-field
+      button(type="submit").search__submit
+        +icon('search').search__search-icon
+      input(type="text" name="search" placeholder="Что вы ищите").search__input
+      .search__close-wrap
+        +icon('close').search__close-icon
+    +search-list().search__list
+
+

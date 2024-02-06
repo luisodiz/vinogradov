@@ -1,0 +1,16 @@
+mixin rounded-btn-with-text(type, text, icon, isTextLeftSide, color)
+  if (type && type === 'link')
+    a(
+      href="#"
+      class=`rounded-btn-with-text ${isTextLeftSide ? 'rounded-btn-with-text_reverse' : ''} ${color ? 'rounded-btn-with-text_' + color : ''}`
+    )&attributes(attributes)
+      .rounded-btn-with-text__icon-wrap
+        +icon(icon ? icon : 'arrow-right').rounded-btn-with-text__icon
+      span.rounded-btn-with-text__text= text
+  else
+    div(
+      class=`rounded-btn-with-text ${isTextLeftSide ? 'rounded-btn-with-text_reverse' : ''} ${color ? 'rounded-btn-with-text_' + color : ''}`
+    )&attributes(attributes)
+      .rounded-btn-with-text__icon-wrap
+        +icon(icon ? icon : 'arrow-right').rounded-btn-with-text__icon
+      span.rounded-btn-with-text__text= text

@@ -1,0 +1,38 @@
+.collections {
+  padding: 20px 0;
+
+  @include tablet {
+    padding: 30px 0;
+  }
+
+  @include desktop {
+    padding: 40px 0;
+  }
+
+  .title-wrapper {
+    .more-btn__text {
+      font-size: 15px;
+      line-height: 150%;
+    }
+
+    .more-btn__btn {
+      width: 32px;
+      height: 32px;
+      margin-left: 5px;
+    }
+  }
+
+  &__more-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    @include tablet {
+      margin-top: 30px;
+    }
+
+    @include desktop {
+      margin-top: 40px;
+    }
+  }
+}

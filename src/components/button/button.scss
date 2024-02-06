@@ -1,0 +1,65 @@
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px 36px;
+  outline: none;
+  @include font-semibold();
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  color: $color-white;
+  background: $color-tuatara;
+  border: none;
+  border: 1px solid $color-tuatara;
+  @include transition-main();
+
+  &:hover {
+    background: $color-black;
+    border: 1px solid $color-black;
+    color: $color-white;
+    text-decoration: none;
+  }
+
+  &_outlined {
+    border: 1px solid $color-dove-gray;
+    color: $color-dove-gray;
+    background: transparent;
+    
+    &:hover {
+      color: $color-black;
+      border: 1px solid $color-black;
+      background: transparent;
+    }
+
+    &.button_disabled {
+      color: $color-iron;
+      border: 1px solid $color-iron;
+      background: transparent;
+
+      &:hover {
+        color: $color-iron;
+        border: 1px solid $color-iron;
+        background: transparent;
+        cursor: not-allowed;
+        pointer-events: unset;
+        user-select: none;
+      }
+    }
+  }
+  
+  &_disabled {
+    background: $color-iron;
+    border: 1px solid $color-iron;
+
+    &:hover {
+      background: $color-iron;
+      border: 1px solid $color-iron;
+      cursor: not-allowed;
+      pointer-events: unset;
+      user-select: none;
+    }
+  }
+}

@@ -1,0 +1,77 @@
+@mixin font-regular {
+  font-family: $gil-regular;
+  font-weight: 400;
+}
+
+@mixin font-regular-italic {
+  font-family: $gil-regular-italic;
+  font-weight: 400;
+}
+
+@mixin font-medium {
+  font-family: $gil-medium;
+  font-weight: 500;
+}
+
+@mixin font-medium-italic {
+  font-family: $gil-medium-italic;
+  font-weight: 500;
+}
+
+@mixin font-semibold {
+  font-family: $gil-semibold;
+  font-weight: 600;
+}
+
+@mixin font-bold {
+  font-family: $gil-bold;
+  font-weight: 700;
+}
+
+@mixin font-extrabold {
+  font-family: $gil-extrabold;
+  font-weight: 800;
+}
+
+@mixin font-black {
+  font-family: $gil-black;
+  font-weight: 900;
+}
+
+@mixin transition-main {
+  transition: .3s ease;
+}
+
+@mixin shadow {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+@mixin desktop {
+  @media (min-width: 1400px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin only-mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin object-fit($fit: fill, $position: null) {
+  -o-object-fit: $fit;
+  object-fit: $fit;
+  @if $position {
+    -o-object-position: $position;
+    object-position: $position;
+    font-family: 'object-fit: #{$fit}; object-position: #{$position}';
+  } @else {
+    font-family: 'object-fit: #{$fit}';
+  }
+}

@@ -1,0 +1,56 @@
+.brand-slider {
+  &__swiper {
+    margin: 0 -15px;
+
+    @include tablet {
+      margin: 0;
+    }
+  }
+
+  &__slide {
+    width: 60%;
+    height: 200px;
+
+    @include tablet {
+      height: 328px;
+    }
+
+    @include desktop {
+      height: 400px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    @include object-fit(cover, center);
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    align-items: center;
+
+    @include tablet {
+      margin-top: 20px;
+    }
+
+    &.swiper-pagination-lock {
+      display: none;
+    }
+
+    .swiper-pagination-bullet {
+      background: $color-iron;
+      width: 8px;
+      height: 8px;
+      opacity: 1;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: $color-tuatara;
+      width: 12px;
+      height: 12px;
+    }
+  }
+}

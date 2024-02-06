@@ -1,0 +1,26 @@
+.home {
+  &__products-slider-section {
+    padding: 20px 0;
+
+    @include tablet {
+      padding: 30px 0;
+    }
+
+    @include desktop {
+      padding: 40px 0;
+    }
+  }
+
+  &__subs-block {
+    padding: 20px 0;
+
+    @include tablet {
+      padding: 30px 0;
+    }
+
+    @include desktop {
+      padding: 40px 0 30px 0;
+    }
+  }
+}
+

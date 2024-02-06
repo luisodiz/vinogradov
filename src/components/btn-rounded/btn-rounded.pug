@@ -1,0 +1,13 @@
+mixin btn-rounded(type, icon, isLight)
+  if (type === 'link')
+    a(href="#" class=`${isLight ? 'btn-rounded_light' : ''}`).btn-rounded&attributes(attributes)
+      if (icon)
+        +icon(icon).btn-rounded__icon
+  else if (type === 'button')
+    button(type="button" class=`${isLight ? 'btn-rounded_light' : ''}`).btn-rounded&attributes(attributes)
+      if (icon)
+        +icon(icon).btn-rounded__icon
+  else
+    div(class=`${isLight ? 'btn-rounded_light' : ''}`).btn-rounded&attributes(attributes)
+      if (icon)
+        +icon(icon).btn-rounded__icon

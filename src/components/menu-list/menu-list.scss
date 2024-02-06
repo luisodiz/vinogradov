@@ -1,0 +1,25 @@
+.menu-list {
+  &__title {
+    @include font-semibold();
+    font-size: 18px;
+    line-height: 150%;
+    margin-bottom: 20px;
+    color: $color-tuatara;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__link {
+    @include font-medium();
+    color: $color-dove-gray;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

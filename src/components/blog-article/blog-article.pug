@@ -1,0 +1,15 @@
+mixin blog-article(data)
+  - const {title, img, desc, date, tags} = data
+
+  article.blog-article&attributes(attributes)
+    a.blog-article__head(href="#")
+      if (tags && tags.length)
+        .blog-article__tags
+          each tag in tags
+            span.blog-article__tag= tag
+      img.blog-article__img(src= img alt="")
+    .blog-article__body
+      a.blog-article__title(href="#")
+        h3= title
+      p.blog-article__desc= desc
+      span.blog-article__date= date

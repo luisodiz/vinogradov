@@ -1,0 +1,18 @@
+mixin modal-base(id, title)
+  - const slots = {}
+
+  mixin slot(key)
+    - slots[key] = block
+
+  block
+
+  .modal.modal-base&attributes(attributes)(class=`${id ? id : ''}` tabindex="-1", role="dialog", id=id).fade
+    .modal-dialog
+      .modal-content
+        button(data-bs-dismiss="modal", aria-label="Close").modal-close
+          +icon('close').modal-close__icon
+        if (title)
+          .modal-header
+            h2.modal-title=title
+        .modal-body
+          - slots["body"]()

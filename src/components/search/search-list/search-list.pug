@@ -1,0 +1,93 @@
+include ../../btn-rounded/btn-rounded
+include ../../more-btn/more-btn
+
+mixin search-list()
+  -
+    const items = [
+      {
+        img: 'img/product/1.png',
+        title: 'Голгофское кольцо 3674994',
+        prices: {
+          current: '14 567 р.',
+          old: '14 567 р.'
+        }
+      },
+      {
+        img: 'img/product/1.png',
+        title: 'Голгофское кольцо 3674994',
+        prices: {
+          current: '14 567 р.',
+          old: '14 567 р.'
+        }
+      },
+      {
+        img: 'img/product/1.png',
+        title: 'Голгофское кольцо 3674994',
+        prices: {
+          current: '14 567 р.',
+          old: '14 567 р.'
+        }
+      }
+    ]
+  .search-list.search-list_hidden&attributes(attributes)
+    .search-list__items
+      each product in items
+        .search-list__item
+          a.search-list__item-img-wrap(href='#')
+            img.search-list__item-img(src= product.img alt="")
+          .search-list__item-desc
+            a.search-list__item-title(href="#")
+              h4.search-list__item-title-text= product.title
+            .search-list__item-prices
+              span.search-list__item-price.search-list__item-price_current= product.prices.current
+              span.search-list__item-price.search-list__item-price_old= product.prices.old
+          .search-list__item-more-wrap
+            +btn-rounded('link', 'arrow-right').search-list__item-more
+
+    +more-btn('Все результаты', 'arrow-down').search-list__show-all
+
+
+mixin search-list-mobile()
+  -
+    const items = [
+      {
+        img: 'img/product/1.png',
+        title: 'Голгофское кольцо 3674994',
+        prices: {
+          current: '14 567 р.',
+          old: '14 567 р.'
+        }
+      },
+      {
+        img: 'img/product/1.png',
+        title: 'Голгофское кольцо 3674994',
+        prices: {
+          current: '14 567 р.',
+          old: '14 567 р.'
+        }
+      },
+      {
+        img: 'img/product/1.png',
+        title: 'Голгофское кольцо 3674994',
+        prices: {
+          current: '14 567 р.',
+          old: '14 567 р.'
+        }
+      }
+    ]
+  .search-list.search-list_mobile.search-list_hidden&attributes(attributes)
+    .search-list__items
+      each product in items
+        .search-list__item
+          a.search-list__item-img-wrap(href='#')
+            img.search-list__item-img(src= product.img alt="")
+          .search-list__item-desc
+            a.search-list__item-title(href="#")
+              h4= product.title
+            .search-list__item-prices
+              span.search-list__item-price.search-list__item-price_current= product.prices.current
+              span.search-list__item-price.search-list__item-price_old= product.prices.old
+          .search-list__item-more-wrap
+            +btn-rounded('link', 'arrow-right').search-list__item-more
+
+    +more-btn('Все результаты', 'arrow-down').search-list__show-all

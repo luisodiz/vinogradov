@@ -1,0 +1,35 @@
+include ./mixins
+
+- var title = 'Виноградов'
+
+doctype html
+html(lang='ru')
+  head
+    block title
+      title= title
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, maximum-scale=1.0')
+    meta(data-n-head='true' property='og:image' content='static/sharing/sharing.svg')
+    meta(name="format-detection" content="telephone=no")
+
+    link(type='image/x-icon' rel='shortcut icon' href='/favicon.ico')
+    link(rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png")
+    link(rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png")
+    link(rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png")
+
+  body(tabIndex=0).page
+    div.sprite !{compilation.assets[spriteFilename].source()}
+
+    block sprite
+
+    .wrapper
+      include ./components/header/header
+
+      main.inner
+        block layout
+
+      block modals
+
+      include ./components/footer/footer
+    block scripts
+

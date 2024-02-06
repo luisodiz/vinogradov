@@ -1,0 +1,32 @@
+include ../more-btn/more-btn
+include ../rounded-btn-with-text/rounded-btn-with-text
+
+mixin title(h1OrH2, text, btnText)
+  if (!btnText)
+    if (h1OrH2 === 'h1')
+      h1.title= text
+    else
+      h2.title= text
+
+  if (btnText)
+    .title-wrapper
+      if (h1OrH2 === 'h1')
+        h1.title= text
+        +more-btn(btnText, 'arrow-right', true)
+      else
+        h2.title= text
+        +more-btn(btnText, 'arrow-right', true)
+
+mixin title-sm(text)
+  h3.title.title_sm&attributes(attributes)= text
+
+mixin title-h2(text)
+  h2.title.title_sm&attributes(attributes)= text
+
+mixin title-h2-medium(text)
+  h2.title.title_medium&attributes(attributes)= text
+
+mixin title-after-button(title, buttonText)
+  .title-wrapper.title-wrapper_block
+    +rounded-btn-with-text('link', buttonText, 'arrow-left').title-wrapper__rounded-btn
+    h1.title= title

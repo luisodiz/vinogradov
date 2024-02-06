@@ -1,0 +1,36 @@
+.categories {
+  &__row {
+    @include desktop {
+      margin-bottom: -20px;
+    }
+  }
+
+  &__col {
+    margin-bottom: 5px;
+
+    &:last-child {
+      margin-bottom: 0;
+
+      @include tablet {
+        margin-bottom: 20px;
+      }
+    }
+
+    @include tablet {
+      margin-bottom: 20px;
+    }
+  }
+
+  .title-wrapper {
+    .more-btn__text {
+      font-size: 15px;
+      line-height: 150%;
+    }
+
+    .more-btn__btn {
+      width: 32px;
+      height: 32px;
+      margin-left: 5px;
+    }
+  }
+}

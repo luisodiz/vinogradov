@@ -1,0 +1,157 @@
+include ../cart-item/cart-item
+include ../button/button
+include ../form/input-field/input-field
+include ../tabs/tabs
+
+mixin cart-section(items, isFullSection, rightBlock)
+  -
+    const cartItems = [
+      {
+        title: 'Голгофское кольцо 3674994',
+        img: 'img/product/1.png',
+        details: {
+          id: '03-10-02003-15',
+          size: '16.5'
+        },
+        showCommentInput: true,
+        actions: ['remove'],
+        prices: {
+          old: '8 240 ₽',
+          current: '7 500 ₽'
+        },
+        lockedInput: false
+      },
+      {
+        title: 'Голгофское кольцо 3674994',
+        img: 'img/product/1.png',
+        details: {
+          id: '03-10-02003-15',
+          size: '16.5'
+        },
+        showCommentInput: true,
+        actions: ['remove'],
+        prices: {
+          old: '8 240 ₽',
+          current: '7 500 ₽'
+        },
+        lockedInput: false
+      },
+      {
+        title: 'Голгофское кольцо 3674994',
+        img: 'img/product/1.png',
+        details: {
+          id: '03-10-02003-15',
+          size: '16.5'
+        },
+        showCommentInput: true,
+        actions: ['remove'],
+        prices: {
+          old: '8 240 ₽',
+          current: '7 500 ₽'
+        },
+        lockedInput: false
+      }
+    ]
+
+  section.cart-section&attributes(attributes)
+    .row.cart-section__row
+      .col-12.col-xxl-8
+        if (items && items.length > 0)
+          each item in items
+            +cart-item(item)
+        else
+          each item in cartItems
+            +cart-item(item)
+
+        if (isFullSection)
+          .cart-section__block.cart-section__block_personal-data
+            .cart-section__block-title Личные данные
+            .cart-section__block-line
+              +input-field('ФИО', 'fio', 'text', 'ФИО').cart-section__block-fio
+              +input-field('Email', 'email', 'email', 'Email').cart-section__block-email
+              +input-field('Контактный телефон', 'contact-phone', 'text', 'Контактный телефон', '+7 999 999 99 99').cart-section__block-phone
+          .cart-section__block.cart-section__block_pay-type
+            .cart-section__block-title Способ оплаты
+            .cart-section__block-pay-type
+              label(for="umoney").cart-section__block-label
+                input(type="radio" name="pay-type" value="umoney" id="umoney").cart-section__block-radio.visually-hidden
+                span.cart-section__block-label-mask
+                  img(src="img/basket/umoney.svg").cart-section__block-radio-icon
+                  span.cart-section__block-radio-text ЮMoney
+              label(for="sbp").cart-section__block-label
+                input(type="radio" name="pay-type" value="sbp" id="sbp").cart-section__block-radio.visually-hidden
+                span.cart-section__block-label-mask
+                  img(src="img/basket/sbp.svg").cart-section__block-radio-icon
+                  span.cart-section__block-radio-text Система Быстрых Платежей
+          .cart-section__block.cart-section__block_delivery
+            .cart-section__block-title Способ получения
+            -
+              const tabs = [
+                {
+                  label: 'Самовывоз из ПВД',
+                  name: 'pickup',
+                  active: true
+                },
+                {
+                  label: 'Курьером',
+                  name: 'courier'
+                },
+              ];
+            +tabs(tabs).cart-section__tabs
+              +slot('pickup')
+                a(href="#").select-place
+                  span.select-place__icon
+                    +icon('pin')
+                  | Выбрать пункт выдачи
+              +slot('courier')
+                p courier
+
+
+      .col-12.col-xxl-4.cart-section__right-block-col
+        if (isFullSection)
+          .cart-section__block.cart-section__block_promo
+            .promo-button.collapsed(data-bs-toggle="collapse" data-bs-target="#promo-collapse")
+              .promo-button__icon-wrap
+                +icon('ticket').promo-button__icon
+              span.promo-button__text Есть промокод, сертификат?
+              +icon('play-down').promo-button__chevron
+            .promo-collapse.collapse(id="promo-collapse")
+              .promo-collapse__inner
+                +input-field('Промокод', 'promocode', 'text', 'Промокод')
+                +button('Применить')
+
+        .cart-section__block
+          - const {title} = rightBlock
+          if (title)
+            .cart-section__block-title= title
+          ul.cart-section__block-list
+            li.cart-section__block-item
+              span.cart-section__block-item-name Изделий шт
+              span.cart-section__block-item-value 3
+            li.cart-section__block-item
+              span.cart-section__block-item-name Стоимость изд.
+              span.cart-section__block-item-value 21 500 ₽
+            li.cart-section__block-item
+              span.cart-section__block-item-name Скидка по промокоду
+              span.cart-section__block-item-value -10%
+            li.cart-section__block-item
+              span.cart-section__block-item-name Доставка
+              span.cart-section__block-item-value Бесплатно
+            li.cart-section__block-item
+              span.cart-section__block-item-name Оплата
+              span.cart-section__block-item-value Онлайн на сайте
+            li.cart-section__block-item.cart-section__block-item_result
+              if (title)
+                span.cart-section__block-item-name К оплате
+                span.cart-section__block-item-value 19 350 ₽
+              else
+                span.cart-section__block-item-name Итог
+                span.cart-section__block-item-value 19 350 ₽
+          if (!title)
+            .cart-section__block-actions
+              +button('Повторить заказ')
+              +button('Отменить заказ', true, true)
+            .cart-section__block-return
+              a(href="#").cart-section__block-return-link Оформить возврат
+          else
+            +button('Оформить заказ').cart-section__block-pay

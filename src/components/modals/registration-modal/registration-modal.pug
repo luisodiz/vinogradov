@@ -1,0 +1,18 @@
+include ../modal-base/modal-base
+include ../../form/input-field/input-field
+include ../../form/checkbox-field/checkbox-field
+include ../../button/button
+
+mixin registration-modal
+  +modal-base('registration-modal', 'Регистрация').registration-modal
+    +slot('body')
+      form.registration-modal__form
+        +input-field('ФИО', 'reg-modal-fio', 'text', 'ФИО').registration-modal__input-field.registration-modal__input-field_fio
+        +input-field('Email', 'reg-modal-password', 'email', 'Еmail').registration-modal__input-field.registration-modal__input-field_email
+        +input-field('Телефон', 'reg-modal-phone', 'text', 'Телефон', '+7 999 999 99 99').registration-modal__input-field.registration-modal__input-field_phone
+        +input-field('Пароль', 'reg-modal-password', 'password', 'Пароль', false, true).registration-modal__input-field.registration-modal__input-field_pass
+        +input-field('Подтверждение пароля ', 'reg-modal-password', 'password', 'Подтверждение пароля ', false, true).registration-modal__input-field.registration-modal__input-field_pass-confirm
+        +checkbox-field('reg-modal-agree', 'reg-modal-agree', 'agree', false, false, true).registration-modal__agree
+        .registration-modal__line
+          +button('Регистрация').registration-modal__submit
+          a(href="#").registration-modal__auth Вернуться к авторизации

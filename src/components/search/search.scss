@@ -1,0 +1,116 @@
+.search {
+  $p: &;
+  position: absolute;
+  top: 0;
+  right: 135px;
+  width: 0;
+  height: 100%;
+  z-index: 15;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0s;
+
+  &_shown {
+    transition: opacity .15s ease .15s, visibility .15s ease .15s;
+    width: calc(100% - 135px);
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+
+    @include tablet {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__input-field {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: $color-white;
+
+    @include tablet {
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        width: 100%;
+        height: 1px;
+        background: $color-tuatara;
+      }
+    }
+
+    @include desktop {
+      border-bottom: 1px solid $color-tuatara;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    height: 100%;
+    padding: 0 54px 0 34px;
+    @include font-medium();
+    color: $color-tuatara;
+
+    &::placeholder {
+      color: $color-iron;
+    }
+  }
+
+  &__submit {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 24px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    outline: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+    &:hover {
+      #{$p}__search-icon {
+        stroke: $color-dove-gray;
+      }
+    }
+  }
+
+  &__search-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    stroke: $color-tuatara;
+    @include transition-main();
+  }
+
+  &__close-wrap {
+    width: 54px;
+    height: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+
+    &:hover {
+      #{$p}__close-icon {
+        stroke: $color-dove-gray;
+      }
+    }
+  }
+
+  &__close-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    stroke: $color-tuatara;
+    @include transition-main();
+  }
+}

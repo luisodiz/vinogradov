@@ -1,0 +1,55 @@
+.more-btn {
+  $p: &;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  @include transition-main();
+
+  &:hover {
+    text-decoration: none;
+
+    #{$p}__btn {
+      background: $color-tuatara;
+      border-color: $color-tuatara;
+    }
+
+    .btn-rounded__icon {
+      stroke: $color-white;
+    }
+  }
+
+  &_light {
+    #{$p}__text {
+      color: $color-white;
+    }
+  }
+
+  &_reverse {
+    flex-direction: row-reverse;
+
+    #{$p}__btn {
+      margin-right: 0;
+      margin-left: 10px;
+    }
+  }
+
+  &__text {
+    color: $color-tuatara;
+    @include font-medium();
+    font-size: 14px;
+    line-height: 20px;
+    @include transition-main();
+
+    @include tablet {
+      font-size: 16px;
+      line-height: 150%;
+    }
+  }
+
+  &__btn {
+    flex-shrink: 0;
+    margin-right: 10px;
+  }
+}

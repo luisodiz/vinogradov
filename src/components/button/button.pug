@@ -1,0 +1,6 @@
+mixin button(text, isOutline, isDisabled)
+  button.button(class=`${isDisabled ? 'button_disabled' : ''} ${isOutline ? 'button_outlined' : ''}`)&attributes(attributes)= text
+
+mixin button-link(text, isOutline, isDisabled)
+  a(href="#").button(class=`${isDisabled ? 'button_disabled' : ''} ${isOutline ? 'button_outlined' : ''}`)&attributes(attributes)= text
+

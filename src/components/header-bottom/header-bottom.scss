@@ -1,0 +1,108 @@
+.header-bottom {
+  height: 90px;
+  display: none;
+  border-bottom: 1px solid $color-black-haze;
+  $p: &;
+
+  @include desktop {
+    display: block;
+  }
+
+  .container {
+    height: 100%;
+  }
+
+  &__inner {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    .logo__img {
+      margin-top: 6px;
+    }
+  }
+
+  &__nav {
+    margin-left: auto;
+    height: 100%;
+    display: flex;
+
+    &-item {
+      height: 100%;
+
+      &.active {
+        #{$p}__menu {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        #{$p}__nav-link {
+          &:after {
+            width: calc(100% - 40px);
+          }
+        }
+
+        &:last-child {
+          #{$p}__nav-link {
+            &:after {
+              width: calc(100% - 20px);
+            }
+          }
+        }
+      }
+
+      &:last-child {
+        #{$p}__nav-link {
+          padding-right: 0;
+
+          &:hover {
+            &:after {
+              width: calc(100% - 20px);
+            }
+          }
+        }
+      }
+    }
+
+    &-link {
+      position: relative;
+      height: 100%;
+      display: inline-flex;
+      align-items: center;
+      font-size: 15px;
+      line-height: 20px;
+      @include font-semibold();
+      text-decoration: none;
+      color: $color-tuatara;
+      text-transform: uppercase;
+      padding: 0 20px;
+
+      &:hover {
+        text-decoration: none;
+
+        &:after {
+          width: calc(100% - 40px);
+        }
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        left: 20px;
+        width: 0;
+        height: 3px;
+        background: $color-tuatara;
+        transition: width .24s ease-in-out;
+      }
+    }
+  }
+
+  &__menu {
+    opacity: 0;
+    visibility: hidden;
+    transition: .2s;
+  }
+}

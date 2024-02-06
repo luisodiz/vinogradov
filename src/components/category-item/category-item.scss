@@ -1,0 +1,65 @@
+.category-item {
+  $p: &;
+  position: relative;
+  height: 230px;
+  display: block;
+
+  &:hover {
+    #{$p}__more {
+      border: 1px solid $color-tuatara;
+      background: $color-tuatara;
+
+      .btn-rounded__icon {
+        stroke: $color-white;
+      }
+    }
+  }
+
+  @include tablet {
+    height: 280px;
+  }
+
+  @include desktop {
+    height: 340px;
+  }
+
+  &__bg {
+    height: 100%;
+    width: 100%;
+    @include object-fit(cover, center);
+  }
+
+  &__title,
+  &__more {
+    position: absolute;
+    z-index: 2;
+  }
+
+  &__title {
+    width: 100%;
+    top: 15px;
+    left: 0;
+    padding: 0 15px;
+    font-size: 18px;
+    line-height: 26px;
+    @include font-medium();
+    color: $color-white;
+
+    @include tablet {
+      top: 20px;
+      padding: 0 30px;
+      font-size: 24px;
+      line-height: 150%;
+    }
+  }
+
+  &__more {
+    bottom: 15px;
+    right: 15px;
+
+    @include tablet {
+      bottom: 20px;
+      right: 20px;
+    }
+  }
+}

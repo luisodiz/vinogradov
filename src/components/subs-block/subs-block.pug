@@ -1,0 +1,12 @@
+include components/subs-form/subs-form
+include ../title/title
+
+mixin subs-block
+  .subs-block&attributes(attributes)
+    .container
+      .subs-block__inner
+        .row
+          .col-12.col-xxl-7
+            +title-sm('Хотите будем сообщать вам об акциях и новинках?').subs-block__title
+          .col-12.col-xxl-5
+            +subs-form

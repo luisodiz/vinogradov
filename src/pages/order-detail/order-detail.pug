@@ -1,0 +1,91 @@
+extends ../../layouts/layout-page/layout-page
+include ../../components/title/title
+include ../../components/btn-rounded/btn-rounded
+include ../../components/cart-section/cart-section
+
+include ../../components/modals/registration-modal/registration-modal
+include ../../components/modals/auth-modal/auth-modal
+
+block title
+  -var title = 'Заказ № 125 от 12.07.22'
+  title= title
+
+block before-content
+  +title-after-button('Заказ № 125 от 12.07.22', 'Все заказы')
+
+block content
+  .order-detail
+    .order-detail__block
+      span.order-detail__block-status Завершен
+      .row.order-detail__list
+        .col-12.col-md-6.col-xxl-3.order-detail__item
+          span.order-detail__item-title Доставка:
+          span.order-detail__item-value Пункт Boxberry, Россия, Ярославль, Большие дубы дом 98, подъезд 1
+        .col-12.col-md-6.col-xxl-3.order-detail__item
+          span.order-detail__item-title Получатель:
+          span.order-detail__item-value Иванов Иван Иванович
+        .col-12.col-md-6.col-xxl-3.order-detail__item
+          span.order-detail__item-title Контакты:
+          span.order-detail__item-value +7 961 544 32 56<br> ivanovskiymen@yandex.ru
+        .col-12.col-md-6.col-xxl-3.order-detail__item
+          span.order-detail__item-title Документы:
+          a(href="#").order-detail__item-value Электронный чек
+
+    -
+      const cartItems = [
+        {
+          title: 'Голгофское кольцо 3674994',
+          img: 'img/product/1.png',
+          details: {
+            id: '03-10-02003-15',
+            size: '16.5'
+          },
+          showCommentInput: false,
+          actions: ['heart', 'bag'],
+          prices: {
+            old: '8 240 ₽',
+            current: '7 500 ₽'
+          },
+          lockedInput: true,
+        },
+        {
+          title: 'Голгофское кольцо 3674994',
+          img: 'img/product/1.png',
+          details: {
+            id: '03-10-02003-15',
+            size: '16.5'
+          },
+          showCommentInput: false,
+          actions: ['heart', 'bag'],
+          prices: {
+            old: '8 240 ₽',
+            current: '7 500 ₽'
+          },
+          lockedInput: true,
+        },
+        {
+          title: 'Голгофское кольцо 3674994',
+          img: 'img/product/1.png',
+          details: {
+            id: '03-10-02003-15',
+            size: '16.5'
+          },
+          showCommentInput: false,
+          actions: ['heart', 'bag'],
+          prices: {
+            old: '8 240 ₽',
+            current: '7 500 ₽'
+          },
+          lockedInput: true,
+        }
+      ]
+
+    -
+      const rightBlock = {
+        title: false
+      }
+    +cart-section(cartItems, false, rightBlock).order-detail__cart-section
+
+block modals
+  +auth-modal()
+  +registration-modal()

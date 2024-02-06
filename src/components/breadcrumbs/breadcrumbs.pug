@@ -1,0 +1,12 @@
+mixin breadcrumbs(items)
+  .breadcrumbs&attributes(attributes)
+    .breadcrumbs__list
+      each item, idx in items
+        if (idx === 0 && idx === items.length - 1)
+          a.breadcrumbs__link.breadcrumbs__link_single(href="#")= item
+        else
+          if (idx !== items.length - 1)
+            a.breadcrumbs__link(href="#")= item
+            span.breadcrumbs__separator
+          else
+            span.breadcrumbs__text= item

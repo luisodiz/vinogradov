@@ -1,0 +1,139 @@
+.collections-item {
+  $p: &;
+  position: relative;
+
+  &:not(:last-child) {
+    margin-bottom: 30px;
+
+    @include tablet {
+      margin-bottom: 40px;
+    }
+
+    @include desktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &_reverse {
+    #{$p}__slider-row {
+      left: 0;
+    }
+
+    #{$p}__title {
+      text-align: left;
+      max-width: 80%;
+
+      @include tablet {
+        max-width: 70%;
+      }
+
+      @include desktop {
+        max-width: 100%;
+        text-align: right;
+        padding: 0 30px 0 120px;
+      }
+    }
+
+    #{$p}__more {
+      left: unset;
+      right: 15px;
+
+      @include tablet {
+        right: 30px;
+        left: unset;
+      }
+    }
+  }
+
+  &__block {
+    display: block;
+    position: relative;
+    height: 230px;
+
+    @include tablet {
+      height: 411px;
+    }
+
+    @include desktop {
+      height: 435px;
+    }
+
+    &:hover {
+      #{$p}__more-btn {
+        background: $color-tuatara;
+        border: 1px solid $color-tuatara;
+      }
+
+      #{$p}__more {
+        background: $color-tuatara;
+        border-color: $color-tuatara;
+
+        .btn-rounded-icon {
+          stroke: $color-white;
+        }
+      }
+    }
+  }
+
+  &__bg {
+    height: 100%;
+    width: 100%;
+    @include object-fit(cover, center);
+  }
+
+  &__title {
+    width: 100%;
+    max-width: 80%;
+    @include font-medium();
+    font-size: 18px;
+    line-height: 26px;
+    position: absolute;
+    top: 15px;
+    padding: 0 15px;
+    color: $color-white;
+    text-align: left;
+
+    @include tablet {
+      max-width: 70%;
+      top: 30px;
+      padding: 0 30px;
+      font-size: 24px;
+      line-height: 150%;
+    }
+
+    @include desktop {
+      max-width: 100%;
+      padding: 0 120px 0 30px;
+    }
+  }
+
+  &__more {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+
+    @include tablet {
+      bottom: 30px;
+      left: 30px;
+    }
+  }
+
+  &__slider-row {
+    position: static;
+    width: unset;
+    margin-top: 15px;
+
+    @include tablet {
+      margin-top: 20px;
+    }
+
+    @include desktop {
+      position: absolute;
+      width: 50%;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      z-index: 3;
+    }
+  }
+}

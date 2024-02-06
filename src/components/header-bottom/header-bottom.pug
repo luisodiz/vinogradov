@@ -1,0 +1,37 @@
+include ../logo/logo
+include ../menu/menu
+
+mixin header-bottom
+  .header-bottom&attributes(attributes)
+    .container
+      .header-bottom__inner
+        +logo().header-bottom__logo
+        ul.header-bottom__nav
+          li.header-bottom__nav-item
+            a.header-bottom__nav-link(href="#") Кольца
+            +menu().header-bottom__menu
+          li.header-bottom__nav-item
+            a.header-bottom__nav-link(href="#") Кресты
+            +menu().header-bottom__menu
+          li.header-bottom__nav-item
+            a.header-bottom__nav-link(href="#") Подвески
+            +menu().header-bottom__menu
+          li.header-bottom__nav-item
+            a.header-bottom__nav-link(href="#") Браслеты
+            +menu().header-bottom__menu
+          li.header-bottom__nav-item
+            a.header-bottom__nav-link(href="#") Шнурки
+            +menu().header-bottom__menu
+          li.header-bottom__nav-item
+            a.header-bottom__nav-link(href="#") Серьги
+            +menu().header-bottom__menu
+          li.header-bottom__nav-item
+            a.header-bottom__nav-link(href="#") Коллекции
+            +menu().header-bottom__menu
+          li.header-bottom__nav-item
+            a.header-bottom__nav-link(href="#") Подарки
+            +menu().header-bottom__menu
+          li.header-bottom__nav-item
+            a.header-bottom__nav-link(href="#") Информация
+            +menu().header-bottom__menu
+

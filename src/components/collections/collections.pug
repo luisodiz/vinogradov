@@ -1,0 +1,14 @@
+include ../title/title
+include ../collections-item/collections-item
+include ../more-btn/more-btn
+
+mixin collections
+  section.collections.section
+    .container
+      +title('h2', 'Коллекции', 'Все коллекции')
+
+      .collections__list
+        +collections-item('Молитва', 'img/collections/1.jpg')
+        +collections-item('Гора Голгофа', 'img/collections/2.jpg', true)
+      .collections__more-wrapper
+        +more-btn('Показать еще', 'arrow-down').collections__more-btn

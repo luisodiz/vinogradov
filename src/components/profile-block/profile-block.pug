@@ -1,0 +1,39 @@
+include ../btn-rounded/btn-rounded
+
+mixin profile-block(data)
+  - const {title, list, isDashed, isFavorite, currentStatus} = data
+
+  .profile-block
+      if (currentStatus)
+        span.profile-block__status= currentStatus
+      h4.profile-block__title= title
+      if (list && list.length && !isFavorite)
+        ul.profile-block__list
+          each listItem in list
+            if (!isDashed && !isFavorite)
+              li.profile-block__item
+                if (listItem.isNameBlockItem)
+                  span.profile-block__item-name.profile-block__item-name_block= listItem.name
+                  |
+                  |
+                  span.profile-block__item-value= listItem.value
+                else
+                  span.profile-block__item-name= listItem.name
+                  |
+                  |
+                  span.profile-block__item-value= listItem.value
+            else if (isDashed && !isFavorite)
+              li.profile-block__item.profile-block__item_dashed
+                span.profile-block__item-name= listItem.name
+                |
+                |
+                span.profile-block__item-value= listItem.value
+      else if (isFavorite)
+        .profile-block__content
+          .profile-block__favorite-icon-wrap
+            +icon('heart').profile-block__favorite-icon
+            span.profile-block__favorite-icon-count 0
+          span.profile-block__favorite-text В избранном пусто
+          a(href="#").profile-block__favorite-add-products Добавить товары
+
+      +btn-rounded('link', 'arrow-right').profile-block__more

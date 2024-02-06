@@ -1,0 +1,138 @@
+include ../menu-list/menu-list
+include ../auth-block/auth-block
+include ../button/button
+include ../form/input-field/input-field
+include ../search/search-list/search-list
+
+mixin menu
+  .menu.menu_desktop&attributes(attributes)
+    .menu__inner
+      .container
+        .row
+          .col-xxl-9
+            .row
+              .col-xxl-4.mb-4
+                +menu-list('Для кого', 'Для женщин', 'Для мужчин', 'Для детей')
+              .col-xxl-4.mb-4
+                +menu-list('Материал', 'Золото 585 пробы', 'Серебро 925 пробы', 'Золоченое серебро', 'Черненое серебро', 'Дерево')
+              .col-xxl-4.mb-4
+                +menu-list('Вставка', 'Бриллиант', 'Фианит', 'Финифть')
+          .col-xxl-3
+            a.menu__banner(href="#")
+              img.menu__banner-img(src="img/menu/banner.png" alt="")
+
+mixin menu2
+  .menu-backdrop.hidden
+  .menu.menu_mobile&attributes(attributes)
+    .menu__inner
+      .container.menu__container
+        .menu__top
+          button.menu__close(type="button")
+            +icon('close').menu__close-icon
+          +auth-block().menu__auth-block
+          button.menu__search
+            +icon('search').menu__search-icon
+          .search-mobile
+            +icon('search').search-mobile__search-icon
+            +input-field('', 'search', 'text', '').search-mobile__input
+          +search-list.menu__search-list
+      .menu__content
+        .menu__content-left
+          ul.mobile-menu-list
+            li.mobile-menu-list__item
+              a.mobile-menu-list__link(href="#")
+                span Кольца
+                +icon('chevron-right')
+            li.mobile-menu-list__item
+              a.mobile-menu-list__link(href="#")
+                span Кресты
+                +icon('chevron-right')
+            li.mobile-menu-list__item
+              a.mobile-menu-list__link(href="#")
+                span Подвески
+                +icon('chevron-right')
+            li.mobile-menu-list__item
+              a.mobile-menu-list__link(href="#")
+                span Браслеты
+                +icon('chevron-right')
+            li.mobile-menu-list__item
+              a.mobile-menu-list__link(href="#")
+                span Шнурки
+                +icon('chevron-right')
+            li.mobile-menu-list__item
+              a.mobile-menu-list__link(href="#")
+                span Серьги
+                +icon('chevron-right')
+            li.mobile-menu-list__item
+              a.mobile-menu-list__link(href="#")
+                span Коллекции
+                +icon('chevron-right')
+            li.mobile-menu-list__item
+              a.mobile-menu-list__link(href="#")
+                span Подарки
+                +icon('chevron-right')
+            li.mobile-menu-list__item
+              a.mobile-menu-list__link(href="#")
+                span Информация
+                +icon('chevron-right')
+
+          .menu-phones
+            .menu-phones__button.collapsed(data-bs-toggle="collapse" data-bs-target="#menu-phones-collapse")
+              span.menu-phones__button-text 8 (800) 600-85-33
+              +icon('play-down').menu-phones__button-icon
+            .menu-phones__collapse.collapse(id="menu-phones-collapse")
+              .menu-phones__collapse-inner
+                .menu-phones__item
+                  a(href="tel:+78006008533").menu-phones__link 8 (800) 600-85-33
+                  span.menu-phones__link-desc Бесплатно по России
+                .menu-phones__item
+                  a(href="tel:+74942838533").menu-phones__link 8 (4942) 83-85-33
+                  span.menu-phones__link-desc Отдел оптовых продаж
+                +button('Заказать звонок').menu-phones__order-call
+        .menu__content-right
+          .mobile-menu-back
+            .mobile-menu-back__button
+              +icon('chevron-left').mobile-menu-back__icon
+            .mobile-menu-back__category Кольца
+          .mobile-menu-right-block
+            .mobile-menu-right-block__item
+              .mobile-menu-right-block__item-title Для кого
+              ul.mobile-menu-right-block__list
+                li.mobile-menu-right-block__list-item
+                  a(href="#").mobile-menu-right-block__list-link Для женщин
+                li.mobile-menu-right-block__list-item
+                  a(href="#").mobile-menu-right-block__list-link Для мужчин
+                li.mobile-menu-right-block__list-item
+                  a(href="#").mobile-menu-right-block__list-link Для детей
+            .mobile-menu-right-block__item
+              .mobile-menu-right-block__item-title Металл
+              ul.mobile-menu-right-block__list
+                li.mobile-menu-right-block__list-item
+                  a(href="#").mobile-menu-right-block__list-link Золото 585 пробы
+                li.mobile-menu-right-block__list-item
+                  a(href="#").mobile-menu-right-block__list-link Серебро 925 пробы
+                li.mobile-menu-right-block__list-item
+                  a(href="#").mobile-menu-right-block__list-link Золоченое серебро
+                li.mobile-menu-right-block__list-item
+                  a(href="#").mobile-menu-right-block__list-link Черненое серебро
+            .mobile-menu-right-block__item
+              .mobile-menu-right-block__item-title Металл
+              ul.mobile-menu-right-block__list
+                li.mobile-menu-right-block__list-item
+                  a(href="#").mobile-menu-right-block__list-link Аметист
+                li.mobile-menu-right-block__list-item
+                  a(href="#").mobile-menu-right-block__list-link Фианит
+                li.mobile-menu-right-block__list-item
+                  a(href="#").mobile-menu-right-block__list-link Оникс
+                li.mobile-menu-right-block__list-item
+                  a(href="#").mobile-menu-right-block__list-link Бриллиант
+                li.mobile-menu-right-block__list-item
+                  a(href="#").mobile-menu-right-block__list-link Опал
+                li.mobile-menu-right-block__list-item
+                  a(href="#").mobile-menu-right-block__list-link Гранат
+                li.mobile-menu-right-block__list-item
+                  a(href="#").mobile-menu-right-block__list-link Изумруд
+                li.mobile-menu-right-block__list-item
+                  a(href="#").mobile-menu-right-block__list-link Рубин
+                li.mobile-menu-right-block__list-item
+                  a(href="#").mobile-menu-right-block__list-link Хризолит

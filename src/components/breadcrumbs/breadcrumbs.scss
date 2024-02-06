@@ -1,0 +1,73 @@
+.breadcrumbs {
+  margin-bottom: 5px;
+  padding-top: 15px;
+
+  @include tablet {
+    margin-bottom: 15px;
+    padding-top: 30px;
+  }
+
+  @include desktop {
+    margin-bottom: 20px;
+    padding-top: 40px;
+  }
+
+  &__list {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__link {
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 18px;
+    color: $color-dove-gray;
+    margin-left: 5px;
+
+    @include tablet {
+      font-size: 14px;
+      line-height: 150%;
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:hover {
+      text-decoration: none;
+      color: $color-tuatara;
+    }
+
+    &_single {
+      color: $color-tuatara;
+    }
+  }
+
+  &__text {
+    font-size: 12px;
+    line-height: 18px;
+    color: $color-tuatara;
+    margin-left: 5px;
+
+    @include tablet {
+      font-size: 14px;
+      line-height: 150%;
+    }
+  }
+
+  &__separator {
+    display: inline-flex;
+    width: 10px;
+    height: 1px;
+    line-height: 18px;
+    background: $color-tuatara;
+    margin-left: 5px;
+    margin-bottom: 3px;
+    pointer-events: none;
+
+    @include tablet {
+      width: 11px;
+    }
+  }
+}

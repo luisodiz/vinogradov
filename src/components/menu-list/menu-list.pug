@@ -1,0 +1,8 @@
+mixin menu-list(title, ...items)
+  .menu-list&attributes(attributes)
+    h4.menu-list__title= title
+    if (items && items.length)
+      ul.menu-list__ul
+        each item in items
+          li.menu-list__item
+            a(href='#').menu-list__link= item

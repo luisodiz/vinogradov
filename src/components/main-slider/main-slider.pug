@@ -1,0 +1,27 @@
+include ../more-btn/more-btn
+
+mixin main-slider()
+  .main-slider
+    .swiper.main-slider__swiper
+      .swiper-wrapper
+        .swiper-slide.main-slide.main-slider__slide(style="background-image: url(img/main-slider/1.jpg)")
+          .container
+            .main-slide__desc
+              h2.main-slide__title Символы веры
+              p.main-slide__text «Тайны истины открыты в символах и образах» В коллекции представлены изделия с аутентичной православной символикой.
+              +more-btn('Подробнее', 'arrow-right', false, true)
+        .swiper-slide.main-slide.main-slider__slide(style="background-image: url(img/main-slider/2.jpg)")
+          .container
+            .main-slide__desc
+              h2.main-slide__title Коллекция «Святые образа»
+              p.main-slide__text Коллекция изделий с образами святых, к которым мы прибегаем за помощью в трудные минуты
+              +more-btn('Подробнее', 'arrow-right', false, true)
+        .swiper-slide.main-slide.main-slider__slide(style="background-image: url(img/main-slider/1.jpg)")
+          .container
+            .main-slide__desc
+              p hello world
+      .main-slider__left
+        +icon('chevron-left').main-slider__left-icon
+      .main-slider__right
+        +icon('chevron-right').main-slider__right-icon
+      .swiper-pagination

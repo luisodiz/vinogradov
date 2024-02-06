@@ -1,0 +1,110 @@
+include ../product/product
+
+mixin products-slider
+  -
+    const products = [
+      {
+        img: 'img/product/2.png',
+        prices: {
+          current: '14 567 р.',
+          old: '16 727 р.'
+        },
+        tags: ['Новинка'],
+        count: 200,
+        favorite: true
+      },
+      {
+        img: 'img/product/3.png',
+        prices: {
+          current: '14 567 р.',
+          old: '16 727 р.'
+        },
+        tags: ['Новинка'],
+        favorite: true
+      },
+      {
+        img: 'img/product/4.png',
+        prices: {
+          current: '14 567 р.',
+          old: '16 727 р.'
+        },
+        count: 7
+      },
+      {
+        img: 'img/product/1.png',
+        prices: {
+          current: '14 567 р.',
+          old: '16 727 р.'
+        },
+        tags: ['Новинка'],
+      },
+      {
+        img: 'img/product/1.png',
+        prices: {
+          current: '14 567 р.',
+          old: '16 727 р.'
+        },
+        tags: ['Новинка'],
+      },
+    ]
+
+  .products-slider&attributes(attributes)
+    .swiper.products-slider__swiper
+      .swiper-wrapper
+        each productItem in products
+          .swiper-slide.products-slider__slide
+            +product(productItem)
+    .products-slider__pagination
+    .products-slider__left
+      +icon('chevron-left').products-slider__left-icon
+    .products-slider__right
+      +icon('chevron-right').products-slider__right-icon
+
+mixin products-slider2
+  -
+    const products = [
+      {
+        img: 'img/product/1.png',
+        prices: {
+          current: '14 567 р.',
+          old: '16 727 р.'
+        },
+        tags: ['Новинка'],
+      },
+      {
+        img: 'img/product/1.png',
+        prices: {
+          current: '14 567 р.',
+          old: '16 727 р.'
+        },
+        tags: ['Новинка'],
+      },
+      {
+        img: 'img/product/1.png',
+        prices: {
+          current: '14 567 р.',
+          old: '16 727 р.'
+        },
+        tags: ['Новинка'],
+      },
+      {
+        img: 'img/product/1.png',
+        prices: {
+          current: '14 567 р.',
+          old: '16 727 р.'
+        },
+        tags: ['Новинка'],
+      },
+    ]
+
+  .products-slider.products-slider_v2&attributes(attributes)
+    .swiper.products-slider__swiper
+      .swiper-wrapper
+        each productItem in products
+          .swiper-slide.products-slider__slide
+            +product(productItem)
+    .products-slider__pagination
+    .products-slider__left
+      +icon('chevron-left').products-slider__left-icon
+    .products-slider__right
+      +icon('chevron-right').products-slider__right-icon

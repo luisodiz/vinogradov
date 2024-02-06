@@ -1,0 +1,18 @@
+include ../category-item/category-item
+include ../title/title
+
+mixin categories
+  section.main-section.categories
+    .container
+      +title('h2', 'Категории', 'Все украшения')
+      .row.categories__row
+        .col-12.col-md-6.col-xxl-4.categories__col
+          +category-item('Кольца', 'img/categories/1.jpg')
+        .col-12.col-md-6.col-xxl-4.categories__col
+          +category-item('Кресты', 'img/categories/2.jpg')
+        .col-12.col-md-6.col-xxl-4.categories__col
+          +category-item('Подвески', 'img/categories/3.jpg')
+        .col-12.col-md-6.col-xxl-6.categories__col
+          +category-item('Браслеты', 'img/categories/4.jpg')
+        .col-12.col-xxl-6.categories__col
+          +category-item('Шнурки', 'img/categories/5.jpg')

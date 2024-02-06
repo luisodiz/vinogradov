@@ -1,0 +1,30 @@
+include ../change-count/change-count
+include ../btn-rounded/btn-rounded
+include ../form/input-field/input-field
+include ../form/textarea-field/textarea-field
+
+mixin cart-item(data)
+  - const {title, img, details: {id, size}, showCommentInput, actions, prices: {old, current}, lockedInput} = data
+  .cart-item&attributes(attributes)
+    a.cart-item__img-link(href="#")
+      img.cart-item__img(src= img alt="")
+    .cart-item__body
+      .cart-item__info
+        h4.cart-item__title= title
+        ul.cart-item__list
+          li.cart-item__list-item
+            span.cart-item__list-item-name Артикул:
+            span.cart-item__list-item-value= id
+          li.cart-item__list-item
+            span.cart-item__list-item-name Размер:
+            span.cart-item__list-item-value= size
+        if (showCommentInput)
+          +textarea-field('Комментарий', 'comment', 'Комментарий').cart-item__comment
+      +change-count(lockedInput).cart-item__change-count
+    .cart-item__right-block
+      .cart-item__prices
+        span.cart-item__price.cart-item__price_current= current
+        span.cart-item__price.cart-item__price_old= old
+      .cart-item__actions
+        each action in actions
+          +btn-rounded('button', action).cart-item__action

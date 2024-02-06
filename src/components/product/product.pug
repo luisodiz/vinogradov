@@ -1,0 +1,25 @@
+include ../add-to-favorites/add-to-favorites
+
+mixin product(data)
+  - const {img, tags, prices, count, favorite} = data
+
+  .product&attributes(attributes)
+    a(href="#").product__img-container
+      img.product__img(src= img alt="")
+    if (favorite)
+      +add-to-favorites(true).product__add-to-favorites
+    else
+      +add-to-favorites().product__add-to-favorites
+    if (tags && tags.length > 0)
+      .product__tags
+        .product__tags-row
+          each tag in tags
+            .product__tags-col
+              span.product__tags-item= tag
+    .product__prices
+      span.product__current-price= prices.current
+      span.product__old-price= prices.old
+    button.product__add-to-cart
+      +icon('bag').product__add-to-cart-icon
+      if (count)
+        span.product__add-to-cart-count= count

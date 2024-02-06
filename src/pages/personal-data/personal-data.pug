@@ -1,0 +1,55 @@
+extends ../../layouts/layout-page/layout-page
+include ../../components/title/title
+include ../../components/btn-rounded/btn-rounded
+
+include ../../components/modals/registration-modal/registration-modal
+include ../../components/modals/auth-modal/auth-modal
+
+block title
+  -var title = 'Личные данные'
+  title= title
+
+block before-content
+  +title-after-button('Личные данные', 'В профиль')
+
+block content
+  .personal-data
+    .personal-data__block.personal-data__block_1
+      .avatar
+        +icon('user2').avatar__icon
+      .personal-data__block-body
+        .personal-data__user-name Иванов Иван Иванович
+        .personal-data__line
+          ul.personal-data__list
+            li.personal-data__item
+              span.personal-data__item-title Телефон:
+              span.personal-data__item-value +7 961 *** 32 56
+            li.personal-data__item
+              span.personal-data__item-title Email:
+              span.personal-data__item-value ivanovskiymen@yandex.ru
+            li.personal-data__item
+              span.personal-data__item-title Дата рождения:
+              span.personal-data__item-value.personal-data__item-value_not-set Не указана
+          .personal-data__actions
+            +btn-rounded('button', 'edit').personal-data__edit
+    .personal-data__block
+      .personal-data__title Данные для доставки
+      .personal-data__block-body
+        .personal-data__line
+          ul.personal-data__list
+            li.personal-data__item
+              span.personal-data__item-title Страна:
+              span.personal-data__item-value Россия
+            li.personal-data__item
+              span.personal-data__item-title Город:
+              span.personal-data__item-value Ярославль
+            li.personal-data__item
+              span.personal-data__item-title Адрес:
+              span.personal-data__item-value.personal-data__item-value_not-set улица Большая дебря дом 56 квартира 74
+          .personal-data__actions
+            +btn-rounded('button', 'edit').personal-data__edit
+            +btn-rounded('button', 'trash').personal-data__remove
+
+block modals
+  +auth-modal()
+  +registration-modal()

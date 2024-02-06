@@ -1,0 +1,56 @@
+.subs-form {
+  $p: &;
+
+  &__line {
+    display: flex;
+    align-items: center;
+  }
+
+  &__input {
+    margin-right: 5px;
+    flex-grow: 1;
+
+    @include tablet {
+      margin-right: 10px;
+    }
+  }
+
+  &__submit {
+    flex-shrink: 0;
+    width: 46px;
+    height: 46px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    border-radius: 50%;
+    border: 1px solid $color-dove-gray;
+    @include transition-main();
+    cursor: pointer;
+
+    &:hover {
+      background: $color-tuatara;
+      border: 1px solid $color-tuatara;
+
+      #{$p}__submit-icon {
+        stroke: $color-white;
+      }
+    }
+
+    &-icon {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      stroke: $color-dove-gray;
+      @include transition-main()
+    }
+  }
+
+  &__rules {
+    font-size: 12px;
+    line-height: 140%;
+    color: $color-dove-gray;
+    padding-left: 1px;
+    margin-top: 10px;
+  }
+}

@@ -1,0 +1,79 @@
+extends ../../layouts/layout-page/layout-page
+include ../../components/breadcrumbs/breadcrumbs
+include ../../components/title/title
+include ../../components/cart-section/cart-section
+
+include ../../components/modals/registration-modal/registration-modal
+include ../../components/modals/auth-modal/auth-modal
+
+
+block title
+  -var title = 'Корзина'
+  title= title
+
+block before-content
+  -
+    const list = ['Главная', 'Корзина']
+  +breadcrumbs(list)
+  +title('h1', 'Корзина')
+
+block content
+  .basket
+    -
+      const cartItems = [
+        {
+          title: 'Голгофское кольцо 3674994',
+          img: 'img/product/1.png',
+          details: {
+            id: '03-10-02003-15',
+            size: '16.5'
+          },
+          showCommentInput: true,
+          actions: ['trash'],
+          prices: {
+            old: '8 240 ₽',
+            current: '7 500 ₽'
+          },
+          lockedInput: false,
+        },
+        {
+          title: 'Голгофское кольцо 3674994',
+          img: 'img/product/1.png',
+          details: {
+            id: '03-10-02003-15',
+            size: '16.5'
+          },
+          showCommentInput: true,
+          actions: ['trash'],
+          prices: {
+            old: '8 240 ₽',
+            current: '7 500 ₽'
+          },
+          lockedInput: false,
+        },
+        {
+          title: 'Голгофское кольцо 3674994',
+          img: 'img/product/1.png',
+          details: {
+            id: '03-10-02003-15',
+            size: '16.5'
+          },
+          showCommentInput: true,
+          actions: ['trash'],
+          prices: {
+            old: '8 240 ₽',
+            current: '7 500 ₽'
+          },
+          lockedInput: false,
+        }
+      ]
+
+    -
+      const rightBlock = {
+        title: 'Итог'
+      }
+    +cart-section(cartItems, true, rightBlock).basket__cart-section
+
+block modals
+  +auth-modal()
+  +registration-modal()

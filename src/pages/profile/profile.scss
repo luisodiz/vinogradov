@@ -1,0 +1,45 @@
+.profile {
+  &__col {
+    margin-bottom: 5px;
+
+    @include tablet {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__row {
+    margin-bottom: -5px;
+
+    @include tablet {
+      margin-bottom: -20px;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+
+    @include tablet {
+      flex-direction: row;
+      align-items: flex-start;
+      margin-top: 30px;
+    }
+
+    &-btn {
+      &_sign-out {
+        .rounded-btn-with-text__icon {
+          stroke: none;
+        }
+
+        &:hover {
+          .rounded-btn-with-text__icon {
+            stroke: none;
+            fill: $color-white;
+          }
+        }
+      }
+    }
+  }
+}

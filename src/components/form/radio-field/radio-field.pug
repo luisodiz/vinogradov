@@ -1,0 +1,8 @@
+mixin radio-field(id, name, value, label, checked)
+  .radio-field()&attributes(attributes)
+    if (checked)
+      input(id= id type="radio" name= name value= value checked).visually-hidden.radio-field__radio
+    else
+      input(id= id type="radio" name= name value= value).visually-hidden.radio-field__radio
+    .radio-field__mask
+    label(for= id).radio-field__label= label

@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "coordinates": [
+      57.763005,
+      40.944061
+    ],
+    "user_photo": "img/stories/story-2.png",
+    "collected_price": "6000000",
+    "total_price": "45000000",
+    "title": "Мечтаю жить! Кире необходима клеточная терапия CAR-T",
+    "for_who": "Кире Карпановой 11 лет из г. Ярославль",
+    "diagnosis": "двусторонняя атрезия слуховых проходов, двусторонняя микротия ушных раковин.",
+    "currency": "₽",
+    "page_link": "https://yandex.ru",
+    "category_type": "all",
+    "city": "Кострома"
+  },
+  {
+    "id": 2,
+    "coordinates": [
+      48.480843,
+      135.067187
+    ],
+    "category_type": "all",
+    "city": "Кострома"
+  },
+  {
+    "id": 3,
+    "coordinates": [
+      55.049736,
+      82.914195
+    ],
+    "user_photo": "img/stories/story-1.png",
+    "collected_price": "1350000",
+    "total_price": "15000000",
+    "title": "Верните жизнь! Косте необходима реабилитация",
+    "for_who": "Константин Курскин, 20 лет",
+    "diagnosis": "сломана спина",
+    "currency": "₽",
+    "page_link": "https://google.com",
+    "category_type": "all",
+    "city": "Новосибирск"
+  },
+  {
+    "id": 5,
+    "coordinates": [
+      55.049736,
+      82.914195
+    ],
+    "user_photo": "",
+    "collected_price": "",
+    "total_price": "",
+    "title": "",
+    "for_who": "",
+    "diagnosis": "",
+    "currency": "",
+    "page_link": "#",
+    "category_type": "all",
+    "city": "Новосибирск"
+  }
+]

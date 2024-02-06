@@ -1,0 +1,18 @@
+@import "./components/subs-form/subs-form";
+
+.subs-block {
+  &__inner {
+    background: $color-black-haze;
+    padding: 20px 15px;
+
+    @include tablet {
+      padding: 40px;
+    }
+  }
+
+  &__title {
+    @include desktop {
+      max-width: 360px;
+    }
+  }
+}

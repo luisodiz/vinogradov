@@ -1,0 +1,6 @@
+include ../modal-base/modal-base
+
+mixin change-or-add-modal
+  +modal-base('change-or-add-modal', 'Хотите изменить/дополнить изделие?').change-or-add-modal
+    +slot('body')
+      p.change-or-add-modal__text Для этого укажите ваши пожелания в поле “Комментарий” в корзине при оформлении заказа. После заявки менеджер свяжется с вами и уточнит детали заказа.

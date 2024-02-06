@@ -1,0 +1,23 @@
+.show-more-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 16px;
+
+  @include tablet {
+    padding-top: 20px;
+    justify-content: space-between;
+  }
+
+  @include desktop {
+    padding-top: 30px;
+  }
+
+  &__more {
+    display: none;
+
+    @include tablet {
+      display: inline-flex;
+    }
+  }
+}

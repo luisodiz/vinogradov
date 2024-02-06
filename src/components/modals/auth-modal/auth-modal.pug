@@ -1,0 +1,17 @@
+include ../modal-base/modal-base
+include ../../form/input-field/input-field
+include ../../button/button
+
+mixin auth-modal
+  +modal-base('auth-modal', 'Авторизация').auth-modal
+    +slot('body')
+      form.auth-modal__form
+        +input-field('Email или телефон', 'auth-modal-login', 'text', 'Email или телефон').auth-modal__input-field.auth-modal__input-field_login
+        +input-field('Пароль', 'auth-modal-password', 'password', 'Пароль', false, true).auth-modal__input-field.auth-modal__input-field_pass
+        .auth-modal__line
+          +button('Войти').auth-modal__submit
+          a(href="#").auth-modal__registration Зарегистрироваться
+
+      .auth-modal__forgot
+        span Забыли пароль?
+        a(href="#").auth-modal__forgot-link Восстановить

@@ -1,0 +1,30 @@
+include ../advantages-item/advantages-item
+
+mixin advantages
+  section.advantages&attributes(attributes)
+    .container
+      .row.advantages__row
+        .col-6.col-md-3.advantages__col
+          +advantages-item(
+            'Высокое качество',
+            'Все изделия проходят авторский контроль. Уровень качества, передающийся из поколения в поколение',
+            'badge1'
+            )
+        .col-6.col-md-3.advantages__col
+          +advantages-item(
+            'Уникальная ручная работа',
+            'Каждое изделие обрабатывается вручную, что придаёт им особую значимость и символичность',
+            'badge2'
+          )
+        .col-6.col-md-3.advantages__col
+          +advantages-item(
+            'Авторский стиль',
+            'Свобода творчества, сочетание независимого стиля автора и православной каноничности',
+            'badge3'
+          )
+        .col-6.col-md-3.advantages__col
+          +advantages-item(
+            'Стремление к непрерывному росту',
+            'Христианское обоснование и подробное описание изделий для их истинного духовного понимания',
+            'badge4'
+          )

@@ -1,0 +1,112 @@
+.products-slider {
+  position: relative;
+  $p: &;
+
+  &__left,
+  &__right {
+    position: absolute;
+    display: none;
+    z-index: 5;
+    width: 24px;
+    height: 24px;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    @include desktop {
+      display: inline-flex;
+    }
+
+    &.swiper-button-lock {
+      display: none;
+    }
+  }
+
+  &__left {
+    left: -34px;
+
+    &:hover {
+      #{$p}__left-icon {
+        fill: $color-tuatara;
+      }
+    }
+
+    &.swiper-button-disabled {
+      cursor: default;
+
+      #{$p}__left-icon {
+        fill: $color-iron;
+        opacity: .7;
+      }
+
+      &:hover {
+        #{$p}__left-icon {
+          fill: $color-iron;
+        }
+      }
+    }
+  }
+
+  &__right {
+    right: -34px;
+
+    &:hover {
+      #{$p}__right-icon {
+        fill: $color-tuatara;
+      }
+    }
+
+    &.swiper-button-disabled {
+      cursor: default;
+
+      #{$p}__right-icon {
+        fill: $color-iron;
+        opacity: .7;
+      }
+
+      &:hover {
+        #{$p}__right-icon {
+          fill: $color-iron;
+        }
+      }
+    }
+  }
+
+  &__left-icon,
+  &__right-icon {
+    width: 24px;
+    height: 24px;
+    fill: $color-tuatara;
+    @include transition-main();
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    align-items: center;
+
+    @include tablet {
+      margin-top: 20px;
+    }
+
+    &.swiper-pagination-lock {
+      display: none;
+    }
+
+    .swiper-pagination-bullet {
+      background: $color-iron;
+      width: 8px;
+      height: 8px;
+      opacity: 1;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: $color-tuatara;
+      width: 12px;
+      height: 12px;
+    }
+  }
+}

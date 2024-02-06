@@ -1,0 +1,92 @@
+extends ../../layouts/layout-page/layout-page
+include ../../components/breadcrumbs/breadcrumbs
+include ../../components/title/title
+include ../../components/filter/filter
+include ../../components/filter-mobile/filter-mobile
+include ../../components/product/product
+include ../../components/rounded-btn-with-text/rounded-btn-with-text
+include ../../components/show-more-line/show-more-line
+
+include ../../components/modals/auth-modal/auth-modal
+include ../../components/modals/registration-modal/registration-modal
+
+block title
+  -var title = 'Каталог изделий'
+  title= title
+
+block before-content
+  -
+    const list = ['Главная', 'Каталог изделий']
+  + breadcrumbs(list)
+  +title('h1', 'Каталог изделий')
+
+block content
+  .catalog
+    +filter-mobile
+    +filter().catalog__filter
+    .catalog__content
+      -
+        const item = {
+          img: 'img/product/1.png',
+          prices: {
+            current: '14 567 р.',
+            old: '16 727 р.'
+          },
+          tags: ['Новинка'],
+          favorite: false,
+        }
+      .row.catalog__row
+        .col-6.col-xxl-3.catalog__col
+          +product(item)
+        .col-6.col-xxl-3.catalog__col
+          +product(item)
+        .col-6.col-xxl-3.catalog__col
+          +product(item)
+        .col-6.col-xxl-3.catalog__col
+          +product(item)
+        .col-6.col-xxl-3.catalog__col
+          +product(item)
+        .col-6.col-xxl-3.catalog__col
+          +product(item)
+        .col-6.col-xxl-3.catalog__col
+          +product(item)
+        .col-6.col-xxl-3.catalog__col
+          +product(item)
+        .col-12
+          .row
+            .col-12.col-xxl-6
+              .row
+                .col-6.catalog__col
+                  +product(item)
+                .col-6.catalog__col
+                  +product(item)
+              .row
+                .col-6.catalog__col
+                  +product(item)
+                .col-6.catalog__col
+                  +product(item)
+            .col-12.col-xxl-6.catalog__banner-col.catalog__col
+              a.catalog__banner(href="#")
+                img(src="img/catalog/banner.jpg" alt="").catalog__banner-img
+                +rounded-btn-with-text('div', 'Показать образ', 'arrow-right')
+        .col-6.col-xxl-3.catalog__col
+          +product(item)
+        .col-6.col-xxl-3.catalog__col
+          +product(item)
+        .col-6.col-xxl-3.catalog__col
+          +product(item)
+        .col-6.col-xxl-3.catalog__col
+          +product(item)
+        .col-6.col-xxl-3.catalog__col
+          +product(item)
+        .col-6.col-xxl-3.catalog__col
+          +product(item)
+        .col-6.col-xxl-3.catalog__col
+          +product(item)
+        .col-6.col-xxl-3.catalog__col
+          +product(item)
+      +show-more-line
+
+block modals
+  +auth-modal()
+  +registration-modal()

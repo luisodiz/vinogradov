@@ -1,0 +1,132 @@
+html,
+body {
+  height: 100%;
+  color: $color-dove-gray;
+  @include font-regular();
+  scroll-behavior: smooth;
+  font-size: 14px;
+  line-height: 150%;
+
+  @include tablet {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+body {
+  background: $color-white;
+  overflow-x: hidden;
+
+  &.hidden {
+    overflow: hidden;
+    padding-right: 0;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  color: $color-tuatara;
+}
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.inner {
+  margin-bottom: auto;
+}
+
+.container {
+  padding: 0 15px;
+
+  @include tablet {
+    padding: 0 10px;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+a {
+  color: $color-dove-gray;
+  text-decoration: underline;
+  @include transition-main();
+
+  &:hover {
+    text-decoration: underline;
+    color: $color-black;
+  }
+}
+
+ul {
+  margin: 0;
+
+  &.list-unstyled {
+    list-style: none;
+    padding: 0;
+  }
+}
+
+.main-section {
+  padding: 20px 0;
+
+  @include tablet {
+    padding: 30px 0;
+  }
+
+  @include desktop {
+    padding: 40px 0;
+  }
+}
+
+.blockquote {
+  @include font-regular-italic();
+  display: block;
+}

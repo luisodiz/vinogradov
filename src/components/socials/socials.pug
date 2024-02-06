@@ -1,0 +1,19 @@
+mixin socials()
+  .socials&attributes(attributes)
+    a.socials__item(href="#")
+      +icon('vk').socials__icon
+    a.socials__item(href="#")
+      +icon('instagram').socials__icon
+    a.socials__item(href="#")
+      +icon('telegram').socials__icon
+
+mixin socials2()
+  .socials.socials_dark&attributes(attributes)
+    a.socials__item(href="#")
+      +icon('vk').socials__icon
+    a.socials__item(href="#")
+      +icon('instagram').socials__icon
+    a.socials__item(href="#")
+      +icon('telegram').socials__icon
+    a.socials__item(href="#")
+      +icon('message2').socials__icon.socials__icon_message

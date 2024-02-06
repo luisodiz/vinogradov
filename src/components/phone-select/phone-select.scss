@@ -1,0 +1,82 @@
+.phone-select {
+  position: relative;
+  $p: &;
+
+  &__main-phone {
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    border-bottom: 1px solid transparent;
+
+    &-number {
+      height: 100%;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    &-toggle-list-icon {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    &_shown-list {
+      border-color: $color-tuatara;
+      transition: .4s .2s ease;
+
+      #{$p}__main-phone-toggle-list-icon {
+        transform: scaleY(-1) translate(0, 0);
+      }
+    }
+  }
+
+  &__list {
+    &-wrap {
+      position: absolute;
+      top: calc(100% + 1px);
+      left: 0;
+      background: $color-white;
+      width: 208px;
+      padding: 20px;
+      @include shadow();
+      z-index: 15;
+      opacity: 0;
+      visibility: hidden;
+      transform: translate(0, -20px);
+      @include transition-main();
+
+      &_shown {
+        transform: translate(0, 0);
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &-item {
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+
+      &-number {
+        display: flex;
+        width: 100%;
+        margin-bottom: -5px;
+        color: $color-tuatara;
+      }
+
+      &-text {
+        font-size: 14px;
+        line-height: 20px;
+        color: $color-dove-gray;
+      }
+    }
+  }
+
+  &__order-call {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px 18px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+}

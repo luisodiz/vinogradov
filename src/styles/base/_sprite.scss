@@ -1,0 +1,141 @@
+.sprite {
+  position: absolute;
+  left: -200vw;
+  opacity: 0;
+  pointer-events: none;
+}
+
+//.sprite-symbol-usage {
+//  display: block !important;
+//}
+//
+//.icon-svg {
+//  fill: $color-black;
+//  transition: all 0.3s;
+//
+//  &--collapse-arrow {
+//    width: 11rem;
+//    height: 7rem;
+//  }
+//
+//  &--link-arrow {
+//    width: 13rem;
+//    height: 10rem;
+//  }
+//
+//  &--account {
+//    width: 22rem;
+//    height: 24rem;
+//  }
+//
+//  &--apple-pay {
+//    width: 51rem;
+//    height: 20rem;
+//
+//    @include small-mobile {
+//      width: 39rem;
+//      height: 15rem;
+//    }
+//  }
+//
+//  &--android-pay {
+//    width: 51rem;
+//    height: 20rem;
+//
+//    @include small-mobile {
+//      width: 38rem;
+//      height: 15rem;
+//    }
+//  }
+//
+//  &--paypal {
+//    width: 19rem;
+//    height: 22rem;
+//
+//    @include small-mobile {
+//      width: 14rem;
+//      height: 17rem;
+//    }
+//  }
+//
+//  &--u-kassa {
+//    width: 68rem;
+//    height: 16rem;
+//  }
+//
+//  &--maestro {
+//    width: 39rem;
+//    height: 30rem;
+//
+//    @include small-mobile {
+//      width: 29rem;
+//      height: 23rem;
+//    }
+//  }
+//
+//  &--master-card {
+//    width: 39rem;
+//    height: 30rem;
+//
+//    @include small-mobile {
+//      width: 29rem;
+//      height: 23rem;
+//    }
+//  }
+//
+//  &--visa {
+//    width: 44rem;
+//    height: 14rem;
+//
+//    @include small-mobile {
+//      width: 33rem;
+//      height: 11rem;
+//    }
+//  }
+//
+//  &--mir {
+//    width: 50rem;
+//    height: 14rem;
+//
+//    @include small-mobile {
+//      margin-right: 20rem;
+//      width: 38rem;
+//      height: 11rem;
+//    }
+//  }
+//
+//  &--sberbank {
+//    width: 100rem;
+//    height: 16rem;
+//
+//    @include small-mobile {
+//      width: 97rem;
+//      height: 16rem;
+//    }
+//  }
+//
+//  &--star,
+//  &--share,
+//  &--attach-file,
+//  &--remove,
+//  &--eye,
+//  &--eye-off {
+//    width: 20rem;
+//    height: 20rem;
+//  }
+//
+//  &--download {
+//    width: 15rem;
+//    height: 14rem;
+//  }
+//
+//  &--date {
+//    width: 24rem;
+//    height: 24rem;
+//  }
+//
+//  &--edit {
+//    fill: $color-grey;
+//    stroke: $color-grey;
+//  }
+//}

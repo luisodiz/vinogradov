@@ -1,0 +1,7 @@
+include ../more-btn/more-btn
+include ../pagination/pagination
+
+mixin show-more-line()
+  .show-more-line&attributes(attributes)
+    +more-btn('Показать еще', 'arrow-down').show-more-line__more
+    +pagination().show-more-line__pagination

@@ -1,0 +1,244 @@
+.footer {
+  padding: 0 5px;
+  background: $color-tuatara;
+  color: $color-iron;
+  font-size: 14px;
+  line-height: 20px;
+
+  @include tablet {
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &__logo-wrap {
+    padding: 20px 30px;
+    width: 100%;
+    background: #3a3a3a;
+    margin-bottom: 30px;
+
+    @include tablet {
+      padding: 40px;
+      margin-bottom: 40px;
+    }
+
+    @include desktop {
+      margin-bottom: 0;
+      height: 100%;
+    }
+  }
+
+  &__logo {
+    width: 100%;
+    display: flex;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 20px;
+
+    @include tablet {
+      padding-bottom: 40px;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 40px;
+      height: 2px;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+      background: $color-iron;
+    }
+
+    .logo__img {
+      flex-shrink: 0;
+      width: 92px;
+      height: 100px;
+
+      @include tablet {
+        width: 115px;
+        height: 125px;
+      }
+    }
+  }
+
+  &__company-desc {
+    &-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    max-width: 230px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 150%;
+
+    @include tablet {
+      max-width: 350px;
+    }
+
+    @include desktop {
+      max-width: 236px;
+    }
+  }
+
+  &__block {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+
+      @include tablet {
+        margin-bottom: 40px;
+      }
+
+      @include desktop {
+        margin-bottom: 0;
+      }
+    }
+
+    &:first-child {
+      @include desktop {
+        padding-left: 15px;
+      }
+    }
+  }
+
+  &__list {
+    &-title-wrap {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      font-size: 16px;
+
+      @include tablet {
+        font-size: 18px;
+        line-height: 150%;
+        margin-bottom: 20px;
+      }
+    }
+
+    &-title {
+      color: $color-white;
+      margin-right: 10px;
+
+      @include tablet {
+        margin-right: 0;
+      }
+    }
+
+    &-chevron {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+
+      @include tablet {
+        display: none;
+      }
+    }
+
+    &-chevron-icon {
+      width: 24px;
+      height: 24px;
+      fill: $color-white;
+    }
+
+    &-item {
+      &:not(:last-child) {
+        margin-bottom: 10px;
+
+        @include tablet {
+          margin-bottom: 15px;
+        }
+      }
+    }
+
+    &-link {
+      @include font-medium();
+      color: $color-iron;
+      text-decoration: none;
+
+      &:hover {
+        color: $color-white;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__center {
+    @include desktop {
+      padding-top: 44px;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    color: $color-dove-gray;
+    font-size: 12px;
+    line-height: 18px;
+
+    &:before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: -7.5px;
+      width: calc(100% + 15px);
+      height: 1px;
+      background: $color-dove-gray;
+
+      @include tablet {
+        left: 10px;
+        width: calc(100% - 20px);
+      }
+
+      @include desktop {
+        left: -10px;
+        width: calc(100% + 10px);
+      }
+    }
+
+    @include tablet {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    @include desktop {
+      margin-top: 65px;
+    }
+
+    a.footer__bottom-item {
+      color: $color-dove-gray;
+      text-decoration: none;
+
+      &:hover {
+        color: $color-iron;
+        text-decoration: none;
+      }
+    }
+
+    &-item {
+      &:not(:last-child) {
+        margin-bottom: 10px;
+
+        @include tablet {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &__creator {
+    &-link {
+      color: $color-iron;
+      text-decoration: underline;
+
+      &:hover {
+        color: $color-white;
+        text-decoration: none;
+      }
+    }
+  }
+}

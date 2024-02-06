@@ -1,0 +1,10 @@
+include ../btn-rounded/btn-rounded
+
+mixin more-btn(text, icon, isTextLeftSide, isLight)
+  a(href="#").more-btn(class=`${isTextLeftSide ? 'more-btn_reverse' : ''} ${isLight ? 'more-btn_light' : ''}`)&attributes(
+    attributes)
+    if (isLight)
+      +btn-rounded('div', icon, true).more-btn__btn
+    else
+      +btn-rounded('div', icon, false).more-btn__btn
+    span.more-btn__text= text

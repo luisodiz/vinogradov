@@ -1,0 +1,19 @@
+.advantages {
+  padding: 20px 0;
+
+  @include tablet {
+    padding: 30px 0;
+  }
+
+  @include desktop {
+    padding: 30px 0 40px 0;
+  }
+
+  &__row {
+    margin-bottom: -20px;
+  }
+
+  &__col {
+    margin-bottom: 20px;
+  }
+}

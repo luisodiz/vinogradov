@@ -1,0 +1,18 @@
+mixin pagination()
+  ul.pagination&attributes(attributes)
+    li.pagination__item.pagination__item_disabled
+      a.pagination__link.pagination__link_btn(href="#")
+        +icon('arrow-left').pagination__link-icon
+    li.pagination__item.pagination__item_active
+      a.pagination__link(href="#") 1
+    li.pagination__item
+      a.pagination__link(href="#") 2
+    li.pagination__item
+      a.pagination__link(href="#") 3
+    li.pagination__item
+      a.pagination__link.pagination__link_separator(href="#") ...
+    li.pagination__item
+      a.pagination__link(href="#") 87
+    li.pagination__item
+      a.pagination__link.pagination__link_btn(href="#")
+        +icon('arrow-right').pagination__link-icon

@@ -1,0 +1,107 @@
+extends ../../layouts/layout-default/layout-default
+include ../../components/form/input-field/input-field
+include ../../components/form/textarea-field/textarea-field
+include ../../components/form/checkbox-field/checkbox-field
+include ../../components/form/radio-field/radio-field
+include ../../components/add-to-favorites/add-to-favorites
+include ../../components/pagination/pagination
+include ../../components/btn-rounded/btn-rounded
+include ../../components/tabs/tabs
+include ../../components/blog-article/blog-article
+
+block title
+  - var title = 'UI'
+  title= title
+
+block content
+  -
+    const tabs = [
+      {
+        label: 'Эл. почта',
+        name: 'email',
+        active: true
+      },
+      {
+        label: 'Телефон',
+        name: 'phone'
+      },
+      {
+        label: 'Телефон',
+        name: 'phone2'
+      },
+      {
+        label: 'Телефон',
+        name: 'phone4'
+      },
+      {
+        label: 'Телефон',
+        name: 'phone5'
+      },
+      {
+        label: 'Телефон',
+        name: 'phone6'
+      }
+    ];
+
+  .container.pt-5.pb-5
+    +input-field('Телефон', 'phone', 'tel', 'Телефон')
+    br
+    +input-field('Телефон', 'phone2', 'tel', 'Телефон', false, false, 'Номер телефона введен не корректно', false, '+7 961 134')
+    br
+    +input-field('Телефон', 'phone3', 'tel', 'Телефон', false, false, false, true)
+    br
+    +input-field('Телефон', 'phone3', 'tel', 'Телефон', false, false, false, true, '+7 961 134')
+    br
+    +input-field('Email', 'email', 'email', 'Email', false, false, false, false)
+    br
+    +input-field('Телефон с маской', 'phone4', 'tel', 'Телефон с маской', '+7 999 999 99 99')
+    br
+    +input-field('Пароль', 'pass1', 'password', 'Пароль', false, true)
+    br
+    +textarea-field('Комментарий к покупке', 'comment', 'Комментарий к покупке')
+    br
+    +textarea-field('Комментарий к покупке', 'comment', 'Комментарий к покупке', 'Длина сообщения превышает 250 символов', false, 'текст с большей длины чем необходимо')
+    br
+    +textarea-field('Комментарий к покупке', 'comment', 'Комментарий к покупке', false, true, 'текст внутри заблокированного поля')
+    br
+    +checkbox-field('filter-price', '100', '100', '100 рублей')
+    br
+    +checkbox-field('filter-price2', '200', '200', '200 рублей')
+    br
+    +radio-field('sex-man', 'sex', 'man', 'Мужской')
+    br
+    +radio-field('sex-female', 'sex', 'female', 'Женский')
+    br
+    br
+    +add-to-favorites()
+    br
+    +add-to-favorites(true)
+    br
+    br
+    +pagination()
+    br
+    +btn-rounded(false, 'arrow-right')
+    br
+    br
+    +tabs(tabs)
+      +slot('email')
+        p hello world
+      +slot('phone')
+        p Phone
+      +slot('phone2')
+        p hello world
+      +slot('phone4')
+        p Phone
+      +slot('phone5')
+        p hello world
+      +slot('phone6')
+        p Phone
+
+    br
+    br
+    +blog-article({
+      title: 'Новая статья',
+      img: 'img/blog/1.jpg',
+      desc: 'Какой то текст для описания',
+      date: '11.03.2022'
+    })

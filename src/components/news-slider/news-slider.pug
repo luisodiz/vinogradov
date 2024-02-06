@@ -1,0 +1,25 @@
+include ../blog-article/blog-article
+
+mixin news-slider
+  -
+    const article = {
+      title: 'Новый вектор развития православных украшений',
+      img: 'img/blog/1.jpg',
+      desc: 'В своей работе мы стремимся чувствовать дух времени и чтить традиции устоявшегося православного мира, где сочетание этики и эстетики',
+      date: '24.10.2022',
+      tags: ['Обзор товаров']
+    }
+
+    const articleList = new Array(6).fill(article)
+
+  .news-slider&attributes(attributes)
+    .swiper.news-slider__swiper
+      .swiper-wrapper
+        each item in articleList
+          .swiper-slide.news-slider__slide
+            +blog-article(item)
+    .news-slider__pagination
+    .news-slider__left
+      +icon('chevron-left').news-slider__left-icon
+    .news-slider__right
+      +icon('chevron-right').news-slider__right-icon

@@ -1,0 +1,9 @@
+mixin select-price(inputs)
+  .select-price&attributes(attributes)
+    .select-price__inputs
+      .select-price__field
+        input(type="number" value= inputs[0].value min="500" max="999999" placeholder="500").select-price__input.select-price__input1
+      .select-price__field
+        input(type="number" value= inputs[1].value min="500" max="999999" placeholder="999999").select-price__input.select-price__input2
+    .select-price__range-wrap
+      .select-price__range
